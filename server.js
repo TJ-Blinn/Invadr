@@ -42,12 +42,12 @@ app.use(
 app.use(express.static("public"));
 
 // Separated Routes for each Resource
-// Note: Feel free to replace the example routes below with your own
+// Note: replace routes below. Ex users and widgets are files held in the db > schema and seeds folders.
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
 
 // Mount all resource routes
-// Note: Feel free to replace the example routes below with your own
+// Note: replace routes below. Ex users and widgets are files held in the db > schema and seeds folders.
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
@@ -62,4 +62,10 @@ app.get("/", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
+});
+
+// -----------------
+
+app.get("/about", (req, res) => {
+  res.render("about");
 });
