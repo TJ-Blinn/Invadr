@@ -26,5 +26,5 @@ CREATE TABLE comments (
   user_id INTEGER REFERENCES users (id),
   game_id INTEGER REFERENCES games (id),
   comment VARCHAR(MAX),
-  created_date DEFAULT CURRENT_TIMESTAMP,
+  created_date DEFAULT CURRENT_TIMESTAMP
 );
