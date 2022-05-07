@@ -10,5 +10,20 @@ CREATE TABLE game (
   thumbnail_url VARCHAR(2048),
   cover_url VARCHAR(2048),
   name VARCHAR(255) NOT NULL,
-  genre VARCHAR
-)
+  genre VARCHAR(50),
+  rawg_id INTEGER
+);
+
+CREATE TABLE likes (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users (id),
+  is_liked BOOLEAN
+);
+
+CREATE TABLE comments (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users (id),
+  game_id INTEGER REFERENCES games (id),
+  comment VARCHAR(MAX),
+  created_date DEFAULT CURRENT_TIMESTAMP,
+);
