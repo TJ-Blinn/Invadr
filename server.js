@@ -9,6 +9,10 @@ const app = express();
 const morgan = require("morgan");
 const cookieSession = require("cookie-session");
 
+// This is requiring all the data being exported from users.js.
+// The function in the users.js file is using the "router" var name to create user routes
+const userRouteCreator = require("./routes/users");
+
 // PG database client/connection setup
 // const { Pool } = require("pg");
 // const dbParams = require("./lib/db.js");
@@ -44,18 +48,23 @@ app.use(express.static("public"));
 
 // Separated Routes for each Resource
 // Note: replace routes below. Ex users and widgets are files held in the db > schema and seeds folders.
-const usersRoutes = require("./routes/users");
+// const userRouteCreator = require("./routes/users");
 // const widgetsRoutes = require("./routes/widgets");
 
 // Mount all resource routes
 // Note: replace routes below. Ex users and widgets are files held in the db > schema and seeds folders.
-app.use("/api/users", usersRoutes(db));
+const userRouter = userRouteCreator(db);
+
+app.use("/accounts", userRouter);
 // app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
+// app.get("/user/:id", (req, res) => {
+//   res.send("user" + req.params.id);
+// });
 
 app.get("/", (req, res) => {
   res.render("index");
@@ -73,4 +82,8 @@ app.listen(PORT, () => {
 
 app.get("/about", (req, res) => {
   res.send("about");
+});
+
+app.post("/register", (req, res) => {
+  res.send("register");
 });
