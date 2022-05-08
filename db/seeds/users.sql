@@ -6,8 +6,7 @@ VALUES (2, 'DunkmasterDarius', 'leagueoflegends@gmail.com', 'asdf');
 
 INSERT INTO users (id, name, email, password)
 VALUES (3, 'CandyCrusher', 'sugarcrush@gmail.com', 'asdf');
-
-INSERT INTO users (id, name, email, password)
+i, email, password)
 VALUES (4, 'MaskMajora', 'hyrulez@gmail.com', 'asdf');
 
 INSERT INTO users (id, name, email, password)
