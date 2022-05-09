@@ -1,6 +1,6 @@
 import React from "react";
 
- import { Box, TextField, Stack, Button } from "@mui/material";
+
 
 export default function About() {
   return (
@@ -14,9 +14,9 @@ export default function About() {
 
       {/* -------- NAV is the same accross all pages -------- */}
 
-      <div class="about">
-        <h1>About</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam et eum labore! Illo reprehenderit deleniti sed mollitia adipisci? Earum quia nobis corrupti officiis atque nesciunt est alias commodi ex similique.</p>
+      <div>
+        <h1 class="about">About</h1>
+        <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam et eum labore! Illo reprehenderit deleniti sed mollitia adipisci? Earum quia nobis corrupti officiis atque nesciunt est alias commodi ex similique.</p>
       </div>
 
 
