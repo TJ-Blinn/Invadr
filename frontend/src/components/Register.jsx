@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Box, TextField, Stack, Button } from "@mui/material";
+
 export default function Register() {
   return (
     <div className="container">
@@ -11,51 +13,33 @@ export default function Register() {
       {/* -------- NAV is the same accross all pages -------- */}
 
       <div className="body-title">
-        <div className="textcontainer">
-          <p>Sign In</p>
-        </div>
-
-        <div className="sign-in text">
-          <p>Don't have an account? Create one!</p>
-        </div>
+        <p>Sign In</p>
+        <p>Don't have an account? Create one!</p>
       </div>
 
-      <form className="form-card">
-        <div class="form-group">
-          <label for="exampleInputEmail1">
-            <b>Email address</b>
-          </label>
-          <input
-            type="email"
-            name="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            placeholder="email@example.com"
-            required
-          />
-        </div>
+      <Box
+        component="form"
+        sx={{
+          "& > :not(style)": { m: 1, width: "75%", margin: "auto" },
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <Stack spacing={2}>
+          <TextField required type="email" label="Email" />
+          <TextField required type="password" label="Password" />
+        </Stack>
 
-        <div class="form-group">
-          <label for="exampleInputPassword1">
-            <b>Password</b>
-          </label>
-          <input
-            type="password"
-            name="password"
-            class="form-control"
-            id="exampleInputPassword1"
-            placeholder="Password"
-            required
-          />
-          <button type="submit">Login</button>
-        </div>
+        <Stack spacing={1} direction="column" alignItems="center">
+          <Button size="large" variant="contained" type="submit">
+            Login
+          </Button>
 
-        <div class="container-cancel">
-          <button type="button" class="cancelbtn">
-            Cancel
-          </button>
-        </div>
-      </form>
+          <Button size="large" variant="outlined" color="error" type="reset">
+            Reset
+          </Button>
+        </Stack>
+      </Box>
     </div>
   );
 }

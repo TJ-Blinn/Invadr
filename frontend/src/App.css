@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,7 +35,7 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 .nav {
   background-color: lime;
@@ -129,3 +129,14 @@
 .card-3 {
   background-color: black;
 }
+
+/* --------------------- */
+
+.body-title {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  font-size: 20px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+
