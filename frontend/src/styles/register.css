@@ -3,9 +3,13 @@
   border: 3px solid #f1f1f1;
 }
 
+label {
+  padding: 15px;
+}
+
 /* Full-width inputs */
 input[type=email], input[type=password] {
-  width: 100%;
+  width: 40%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
