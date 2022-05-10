@@ -1,55 +1,107 @@
 import React from "react";
 
-import { Box, TextField, Stack, Button } from "@mui/material";
+import { Box, Container, Grid, TextField, Link, Button } from "@mui/material";
+import LockClockOutlinedIcon from "@mui/icons-material/LockClockOutlined";
+import { CssBaseline } from "@mui/material";
 
 export default function Register() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      event,
+      email: data.get("email"),
+      password: data.get("password"),
+    });
+  };
+
   return (
-    <div className="container">
-      <nav class="nav">
-        <img class="hamburger" alt="filter button" />
-        <h1 class="page-name">INVADR</h1>
-        <img class="sign-up" alt="Sign Up" />
-      </nav>
-      {/* -------- NAV is the same accross all pages -------- */}
+    <Container component="main" maxWidth="sm">
+      {/* -------- NAV REMOVED HERE -------- */}
+      <CssBaseline />
 
       <div className="body-title">
-        <p>Sign In</p>
-        <p>Don't have an account? Create one!</p>
+        <h1>INVADR</h1>
+        <LockClockOutlinedIcon sx={{ fontSize: 50 }} />
+        <p>Don't have an account?</p>
+        <p>Register</p>
       </div>
 
       <Box
         component="form"
+        onSubmit={handleSubmit}
         sx={{
-          "& > :not(style)": { m: 1, width: "75%", margin: "auto" },
+          marginTop: 8,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
         }}
-        autoComplete="off"
       >
-        <Stack spacing={2}>
-          <TextField
-            required
-            type="email"
-            label="Email"
-            helperText="Please enter your email"
-          />
-          <TextField
-            required
-            type="password"
-            label="Password"
-            margin="normal"
-            helperText="Please enter a password of 8 characters or more"
-          />
-        </Stack>
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              autoComplete="given-name"
+              name="firstName"
+              required
+              fullWidth
+              id="firstName"
+              label="First Name"
+              autoFocus
+            />
+          </Grid>
 
-        <Stack spacing={1} direction="column" alignItems="center">
-          <Button size="large" variant="contained" type="submit">
-            Login
-          </Button>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              required
+              fullWidth
+              id="lastName"
+              label="Last Name"
+              name="lastName"
+              autoComplete="family-name"
+            />
+          </Grid>
 
-          <Button size="large" variant="outlined" color="error" type="reset">
-            Reset
-          </Button>
-        </Stack>
+          <Grid item xs={12}>
+            <TextField
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+            />
+          </Grid>
+
+          <Grid item xs={12}>
+            <TextField
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="new-password"
+            />
+          </Grid>
+        </Grid>
+
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          sx={{ mt: 3, mb: 2 }}
+        >
+          Sign Up
+        </Button>
       </Box>
-    </div>
+      <Grid container justifyContent="flex-end">
+        <Grid item>
+          {/* ADD LINK HERE TO LOGIN */}
+          <Link href="#" underline="hover" variant="body2">
+            Already have an account? Sign in
+          </Link>
+        </Grid>
+      </Grid>
+    </Container>
   );
 }
