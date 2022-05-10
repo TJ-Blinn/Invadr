@@ -13,7 +13,7 @@ export default function Login() {
       {/* -------- NAV is the same accross all pages -------- */}
 
       <div className="body-title">
-        <p>Sign In</p>
+        <p>Login In</p>
         <br />
       </div>
 
