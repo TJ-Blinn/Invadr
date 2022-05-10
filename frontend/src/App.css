@@ -59,6 +59,7 @@
 .sign-up {
   width: 50;
   height: auto;
+  padding: 1%;
 }
 
 .banner {
@@ -137,6 +138,22 @@
   margin: 24px 0 12px 0;
   font-size: 20px;
   font-family: 'Press Start 2P', cursive;
+}
+
+
+/* --------------------- */
+
+.about {
+  display: flex;
+  background-color: cornflowerblue;
+  padding: 5%;
+  font-size: xxx-large;
+}
+
+.about-text {
+  display: flex;
+  padding: 5%;
+  font-size: larger;
 }
 
 
