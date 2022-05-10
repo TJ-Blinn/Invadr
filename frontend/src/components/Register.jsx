@@ -22,12 +22,22 @@ export default function Register() {
         sx={{
           "& > :not(style)": { m: 1, width: "75%", margin: "auto" },
         }}
-        noValidate
         autoComplete="off"
       >
         <Stack spacing={2}>
-          <TextField required type="email" label="Email" />
-          <TextField required type="password" label="Password" />
+          <TextField
+            required
+            type="email"
+            label="Email"
+            helperText="Please enter your email"
+          />
+          <TextField
+            required
+            type="password"
+            label="Password"
+            margin="normal"
+            helperText="Please enter a password of 8 characters or more"
+          />
         </Stack>
 
         <Stack spacing={1} direction="column" alignItems="center">
