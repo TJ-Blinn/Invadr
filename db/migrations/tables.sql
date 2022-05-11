@@ -1,4 +1,4 @@
-DROP TABLE likes , comments, games, users;
+DROP TABLE likes, comments, games, users;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
@@ -13,7 +13,7 @@ CREATE TABLE games (
   cover_url VARCHAR(2048),
   name VARCHAR(255) NOT NULL,
   genre VARCHAR(50),
-  description VARCHAR(2048) DEFAULT "I am a description.",
+  description VARCHAR(2048) DEFAULT 'I am a description.',
   rawg_id INTEGER
 );
 
