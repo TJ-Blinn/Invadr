@@ -14,11 +14,14 @@ const cookieSession = require("cookie-session");
 const userRouteCreator = require("./routes/users");
 
 // PG database client/connection setup
-// const { Pool } = require("pg");
-// const dbParams = require("./lib/db.js");
-// const db = new Pool(dbParams);
-// db.connect();
-const db = "This is just filler for now! ----------";
+const { Pool } = require("pg");
+const dbParams = require("./lib/db.js");
+const db = new Pool(dbParams);
+
+db.connect()
+.catch(err=> console.log("THIS IS THE ERROR:", err))
+
+// const db = "This is just filler for now! ----------";
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
