@@ -1,0 +1,30 @@
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY NOT NULL,
+  username VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE game (
+  id SERIAL PRIMARY KEY NOT NULL,
+  thumbnail_url VARCHAR(2048),
+  cover_url VARCHAR(2048),
+  name VARCHAR(255) NOT NULL,
+  genre VARCHAR(50),
+  rawg_id INTEGER
+);
+
+CREATE TABLE likes (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users (id),
+  game_id INTEGER REFERENCES games (id),
+  is_liked BOOLEAN
+);
+
+CREATE TABLE comments (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users (id),
+  game_id INTEGER REFERENCES games (id),
+  comment VARCHAR(MAX),
+  created_date DEFAULT CURRENT_TIMESTAMP
+);
