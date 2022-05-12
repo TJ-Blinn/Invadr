@@ -1,0 +1,44 @@
+import React, { useEffect, useState } from "react";
+import Navigation from "./Navigation";
+import axios from "axios";
+
+export default function Result() {
+
+  const [results, setResults] = useState([]);
+
+
+  const startingURL = "https://api.rawg.io/api/games?key=d355ab68065146b29254681eac449af9&genres=action";
+
+  useEffect(() => {
+    axios.get(startingURL).then(response => {
+      console.log(response.data.results)
+    });
+  }, []);
+
+  return (
+    <div>
+      {results ? <article class="game-card card-1">
+          <h3 class="game-title">Title</h3>
+          <img
+            class="game-image"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkOhB0ycekzm4Fthfo7mgtBuXUdz1Nw6Wv2w&usqp=CAU"
+            alt="game image"
+          />
+          <p class="game-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+            impedit, accusamus ad ipsam vel velit? A quis et cum veniam? Illo,
+            beatae tempore error doloribus recusandae iure repellendus quos
+            quidem.
+          </p>
+          <img
+            class="game-rating"
+            src="https://www.pngitem.com/pimgs/m/66-660111_star-review-business-vans-book-review-5-stars.png"
+            alt="rating"
+            width="100"
+            height="50"
+          />
+        </article> : <h1>Loading</h1> }
+    </div>
+
+  )
+}
