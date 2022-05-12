@@ -17,11 +17,18 @@ const db = new Client(dbParams);
 // Loads the schema files from db/schema
 const runSchemaFiles = async () => {
   console.log(chalk.cyan(`-> Loading Schema Files ...`));
+<<<<<<< HEAD
+  const schemaFilenames = fs.readdirSync("../db/migrations");
+
+  for (const fn of schemaFilenames) {
+    const sql = fs.readFileSync(`../db/migrations/${fn}`, "utf8");
+=======
   const schemaFilenames = fs.readdirSync(path.resolve("./db/migrations"));
   console.log(schemaFilenames);
 
   for (const fn of schemaFilenames) {
     const sql = fs.readFileSync(`./db/migrations/${fn}`, "utf8");
+>>>>>>> b8810f6cb990139442dc917cc3c0fdb31a3a71d2
     console.log(`\t-> Running ${chalk.green(fn)}`);
     await db.query(sql);
   }
@@ -29,10 +36,10 @@ const runSchemaFiles = async () => {
 
 const runSeedFiles = async () => {
   console.log(chalk.cyan(`-> Loading Seeds ...`));
-  const schemaFilenames = fs.readdirSync("./db/seeds");
+  const schemaFilenames = fs.readdirSync("../db/seeds");
 
   for (const fn of schemaFilenames) {
-    const sql = fs.readFileSync(`./db/seeds/${fn}`, "utf8");
+    const sql = fs.readFileSync(`../db/seeds/${fn}`, "utf8");
     console.log(`\t-> Running ${chalk.green(fn)}`);
     await db.query(sql);
   }
@@ -41,7 +48,9 @@ const runSeedFiles = async () => {
 const runResetDB = async () => {
   try {
     dbParams.host &&
-      console.log(`-> Connecting to PG on ${dbParams.host} as ${dbParams.user}...`);
+      console.log(
+        `-> Connecting to PG on ${dbParams.host} as ${dbParams.user}...`
+      );
     dbParams.connectionString &&
       console.log(`-> Connecting to PG with ${dbParams.connectionString}...`);
     await db.connect();
