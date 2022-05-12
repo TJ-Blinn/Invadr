@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Navigation from "./Navigation";
 import { useState } from "react";
+import Result from "./Result";
 
 
 // const db =
@@ -58,14 +59,15 @@ export default class Results extends Component {
   //   this.getGames();
   // }
 
+  // <button onClick={this.createGame}>createGame</button>
+  //     {this.state.games.map(game => <h2 key={game.id}> {game.title} <button onClick={()=>this.deleteGame(game.id)}>x</button></h2>)}
+
 render() {
   return(
 
     <div>
-      <button onClick={this.createGame}>createGame</button>
-      {this.state.games.map(game => <h2 key={game.id}> {game.title} <button onClick={()=>this.deleteGame(game.id)}>x</button></h2>)}
       <Navigation />
-      <p> Results </p>
+      <Result />
     </div>
   )
 }
