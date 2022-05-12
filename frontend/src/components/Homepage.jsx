@@ -3,25 +3,24 @@ import Navigation from "./Navigation";
 import axios from "axios";
 
 export default function Homepage() {
-  const [genre, setGenre ] = useState("");
   const [results, setResults] = useState([]);
+
+
 
   const startingURL = "https://api.rawg.io/api/genres?key=4d6e63aaf07b45ada62f971b8736e525";
 
-  const baseGenreURL ="https://api.rawg.io/api/games?key=d355ab68065146b29254681eac449af9&genres=";
-
-  // when a genre is selected, append the genre to baseGenreURL
-
   useEffect(() => {
     axios.get(startingURL).then(response => {
-      setResults([response.data.results])
+      console.log(response.data.results)
+      setResults(response.data.results)
     });
   }, []);
 
-  const resultsMapped = results[0].map(result => {
+  const resultsMapped = results.map(result => {
     let value = result.name
-    return <option value={value}>{value}</option>
+    return (<option value={value}>{value}</option>)
   })
+
 
   return (
     <div>
@@ -44,13 +43,13 @@ export default function Homepage() {
         />
       </nav>
 
-      <div class="banner">
+      {results ? <div class="banner">
         <h1 class="banner-text">BEWARE THE INVASION</h1>
         <h2 class="banner-pick">Pick A Genre:</h2>
         <select class="select-genre" name="genre">
           {resultsMapped}
         </select>
-      </div>
+      </div> : <h1>Loading</h1>}
       <h2 class="featured">Featured Games:</h2>
 
       <div class="game-container">
