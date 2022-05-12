@@ -17,18 +17,11 @@ const db = new Client(dbParams);
 // Loads the schema files from db/schema
 const runSchemaFiles = async () => {
   console.log(chalk.cyan(`-> Loading Schema Files ...`));
-<<<<<<< HEAD
-  const schemaFilenames = fs.readdirSync("../db/migrations");
-
-  for (const fn of schemaFilenames) {
-    const sql = fs.readFileSync(`../db/migrations/${fn}`, "utf8");
-=======
   const schemaFilenames = fs.readdirSync(path.resolve("./db/migrations"));
   console.log(schemaFilenames);
 
   for (const fn of schemaFilenames) {
     const sql = fs.readFileSync(`./db/migrations/${fn}`, "utf8");
->>>>>>> b8810f6cb990139442dc917cc3c0fdb31a3a71d2
     console.log(`\t-> Running ${chalk.green(fn)}`);
     await db.query(sql);
   }
