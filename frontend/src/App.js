@@ -5,11 +5,7 @@ import Register from "./components/Register";
 import Homepage from "./components/Homepage";
 import Login from "./components/Login";
 import About from "./components/About";
-<<<<<<< HEAD
-import ZeldaTest from "./components/ZeldaTest";
-=======
 import Results from "./components/Results"
->>>>>>> b8810f6cb990139442dc917cc3c0fdb31a3a71d2
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 
