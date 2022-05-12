@@ -9,6 +9,9 @@ const app = express();
 const morgan = require("morgan");
 const cookieSession = require("cookie-session");
 
+const cors = require("cors");
+app.use(cors());
+
 // This is requiring all the data being exported from users.js.
 // The function in the users.js file is using the "router" var name to create user routes
 const userRouteCreator = require("./routes/users");
@@ -16,10 +19,10 @@ const userRouteCreator = require("./routes/users");
 // PG database client/connection setup
 const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
+const { response } = require("express");
 const db = new Pool(dbParams);
 
-db.connect()
-.catch(err=> console.log("THIS IS THE ERROR:", err))
+db.connect().catch((err) => console.log("THIS IS THE ERROR:", err));
 
 // const db = "This is just filler for now! ----------";
 
@@ -65,10 +68,23 @@ app.use("/accounts", userRouter);
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-// app.get("/user/:id", (req, res) => {
-//   res.send("user" + req.params.id);
-// });
 
+app.get("/user/:id", (req, res) => {
+  const userId = req.params.id;
+  // console.log("================", req.params.id);
+  db.query(
+    `
+SELECT * FROM users WHERE id = $1;
+`,
+    [userId]
+  ).then(({ rows }) => {
+    // console.log("+++++++++++++++++++", req.params.id);
+    res.status(200).json(rows[0]);
+  });
+  // res.send("user" + req.params.id);
+});
+
+// ---------------------------------------
 app.get("/", (req, res) => {
   res.render("index");
 });

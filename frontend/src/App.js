@@ -5,14 +5,11 @@ import Register from "./components/Register";
 import Homepage from "./components/Homepage";
 import Login from "./components/Login";
 import About from "./components/About";
-import Results from "./components/Results"
+import Results from "./components/Results";
+import Profile from "./components/Profile";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-
-
 function App() {
-
-
   return (
     <Router>
       <Routes>
@@ -21,6 +18,7 @@ function App() {
         <Route path="/" element={<Homepage />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/results" element={<Results />}></Route>
+        <Route path="/profile" element={<Profile />}></Route>
       </Routes>
     </Router>
   );
