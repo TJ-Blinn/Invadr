@@ -91,8 +91,8 @@ export default function Navigation() {
           </Hidden>
           {/* Hamburger menu and pop out drawer */}
           <Hidden smUp>
-            <IconButton>
-              <MenuIcon onClick={() => setDrawer(true)} />
+            <IconButton onClick={() => setDrawer(true)} >
+              <MenuIcon />
               <Drawer
                 anchor={"right"}
                 open={drawer}
