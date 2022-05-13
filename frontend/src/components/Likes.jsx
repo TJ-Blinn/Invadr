@@ -1,29 +1,43 @@
 // Wait for the DOM content to finish loading
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import RecommendOutlinedIcon from "@mui/icons-material/RecommendOutlined";
+// import Profile from "./Profile";
+import LikesMapped from "./LikesMapped";
 
-const Profile = function () {
-  const [userLikes, setUserLikes] = useState({});
+// This is the Parent component
+export default function Likes() {
+  const [userLikes, setUserLikes] = useState([]);
+
+  // We will use the useEffect hook to call this function when the Parent component mounts.
+  // useEffect runs after the component is rendered, only run on render,
   useEffect(() => {
+    getAllLikes();
+  }, []);
+
+  const getAllLikes = () => {
     axios
       .get(`http://localhost:8080/likes/`)
       // result is what is being returned by axios from the API
       .then((result) => {
-        console.log("-------", result.data);
-        setUserLikes(result.data);
-      });
-  }, []);
-
+        console.log("2222222222222", result.data);
+        // setUserLikes(result.data);
+        const allLikes = result.data;
+        setUserLikes(allLikes);
+      })
+      .catch((error) => console.error(`Error: $error)`));
+  };
   return (
-    // <button onClick={() => }>
-    <button>
-      <div className="like-button">
-        <RecommendOutlinedIcon />
-        <span>Likes: {this.state.count} </span>
-      </div>
-    </button>
-  );
-};
+    <div>
+      This is a test of Likes for 1 user. The total number of games liked is:{" "}
+      {userLikes.length}
+      <LikesMapped userLikes={userLikes} />
+      {/* <Profile likes={userLikes} />
+      <button>
+        <div className="like-button">
+          <RecommendOutlinedIcon />
 
-export default Profile;
+        </div>
+      </button> */}
+    </div>
+  );
+}
