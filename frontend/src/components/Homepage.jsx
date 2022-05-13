@@ -4,7 +4,7 @@ import axios from "axios";
 
 export default function Homepage() {
 
-  
+
 
 
 
@@ -58,7 +58,7 @@ export default function Homepage() {
         <h1 class="banner-text">BEWARE THE INVASION</h1>
         <h2 class="banner-pick">Pick A Genre:</h2>
         <select class="select-genre" name="genre">
-          {/* {resultsMapped} */}
+          {resultsMapped}
         </select>
       </div> : <h1>Loading</h1>}
       <h2 class="featured">Featured Games:</h2>
