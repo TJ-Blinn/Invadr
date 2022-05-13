@@ -2,41 +2,32 @@ import React, { useEffect, useState } from "react";
 import Navigation from "./Navigation";
 import axios from "axios";
 
-export default function Result() {
+export default function Result(props) {
 
-  const [results, setResults] = useState([]);
+  const [result, setResult] = useState([]);
 
-
-  const startingURL = "https://api.rawg.io/api/games?key=d355ab68065146b29254681eac449af9&genres=action";
+  const gameURL = `https://api.rawg.io/api/games/${props.value}?key=d355ab68065146b29254681eac449af9`
 
   useEffect(() => {
-    axios.get(startingURL).then(response => {
-      console.log(response.data.results)
+    axios.get(gameURL).then(response => {
+      setResult(response.data)
     });
   }, []);
 
   return (
     <div>
-      {results ? <article class="game-card card-1">
-          <h3 class="game-title">Title</h3>
+      {result ? <article class="game-card">
+          <h3 class="game-title">{result.name}</h3>
           <img
             class="game-image"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkOhB0ycekzm4Fthfo7mgtBuXUdz1Nw6Wv2w&usqp=CAU"
+            src={result.background_image}
             alt="game image"
           />
           <p class="game-description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-            impedit, accusamus ad ipsam vel velit? A quis et cum veniam? Illo,
-            beatae tempore error doloribus recusandae iure repellendus quos
-            quidem.
+            {result.description_raw}
           </p>
-          <img
-            class="game-rating"
-            src="https://www.pngitem.com/pimgs/m/66-660111_star-review-business-vans-book-review-5-stars.png"
-            alt="rating"
-            width="100"
-            height="50"
-          />
+          <button>CLICK ME TO LIKE</button>
+          <h3>Metacritic score: {result.metacritic}</h3>
         </article> : <h1>Loading</h1> }
     </div>
 
