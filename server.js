@@ -69,6 +69,7 @@ app.use("/accounts", userRouter);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
+// remove the id from the route on front-end, not needed
 app.get("/user/:id", (req, res) => {
   const userId = req.params.id;
   // console.log("================", req.params.id);
@@ -83,6 +84,28 @@ SELECT * FROM users WHERE id = $1;
   });
   // res.send("user" + req.params.id);
 });
+
+// --------------------------------------
+app.get("/likes", (req, res) => {
+  // const userId = req.params.id;
+  // console.log("================", req.params.id);
+  db.query(
+    `
+SELECT * FROM likes WHERE user_id = 1;
+`
+    // [userId]
+  )
+    .then(({ rows }) => {
+      // console.log("+++++++++++++++++++", req.params.id);
+      res.status(200).json(rows);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  // res.send("user" + req.params.id);
+});
+
+// ---------------------------------------
 
 // ---------------------------------------
 app.get("/", (req, res) => {
