@@ -98,8 +98,7 @@
   flex-direction: column;
   align-items: center;
   background-color: purple;
-  margin-left: 3%;
-  margin-right: 3%;
+  margin: 5%;
 }
 .game-title {
   color: tomato;
