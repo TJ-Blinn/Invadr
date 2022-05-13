@@ -1,6 +1,6 @@
 // import { display } from "@mui/system";
 import React from "react";
-import Likes from "./Likes";
+// import Likes from "./Likes";
 
 // This is the child component for Likes
 
