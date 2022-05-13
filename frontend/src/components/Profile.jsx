@@ -15,6 +15,10 @@ const Profile = function () {
       .then((result) => {
         console.log(result.data);
         setUserData(result.data);
+      })
+      .catch((err) => {
+        // Handle Error Here
+        console.error(err);
       });
   }, []);
 
@@ -41,6 +45,16 @@ const Profile = function () {
 
 export default Profile;
 
-// hook is setting up state and retireving data for it
-// when used in other component, we can call on Profile to change the state
-// return [userData, setUserData];
+// Alternative avios.get using async/await
+
+// const Profile = async () => {
+//   try {
+//       const res = await axios.get('http://localhost:8080/user/1');
+//       console.log(res.data);
+//   } catch (err) {
+//       // Handle Error Here
+//       console.error(err);
+//   }
+// };
+
+// Profile();
