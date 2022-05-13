@@ -13,8 +13,8 @@ const Profile = function () {
       .get(`http://localhost:8080/user/1`)
       // result is what is being returned by axios from the API
       .then((result) => {
-        console.log("===============", result.data);
-        console.log("+++++++++++++++", result);
+        // console.log("===============", result.data);
+        // console.log("+++++++++++++++", result);
         setUserData(result.data);
       })
       .catch((err) => {
