@@ -1,5 +1,5 @@
 // In the function, add a return statement that will return JSX with an <h1>
-
+import Likes from "./Likes";
 import AccountBoxOutlinedIcon from "@mui/icons-material/AccountBoxOutlined";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -13,7 +13,8 @@ const Profile = function () {
       .get(`http://localhost:8080/user/1`)
       // result is what is being returned by axios from the API
       .then((result) => {
-        console.log(result.data);
+        console.log("===============", result.data);
+        console.log("+++++++++++++++", result);
         setUserData(result.data);
       })
       .catch((err) => {
@@ -25,20 +26,21 @@ const Profile = function () {
   return (
     <aside>
       <div>
-        <AccountBoxOutlinedIcon />
+        <AccountBoxOutlinedIcon sx={{ fontSize: 60 }} />
+        <div className="profile__name">
+          <h2>
+            <span className="profile--bold">{userData.name}</span>
+          </h2>
+        </div>
+
+        <div>
+          <h2>
+            <span className="profile--bold">{userData.email}</span>
+          </h2>
+        </div>
       </div>
+      <Likes />
       <br />
-      <div className="profile__name">
-        <h2>
-          <span className="profile--bold">{userData.name}</span>
-        </h2>
-      </div>
-      <br />
-      <div>
-        <h2>
-          <span className="profile--bold">{userData.email}</span>
-        </h2>
-      </div>
     </aside>
   );
 };
