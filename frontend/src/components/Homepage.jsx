@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navigation from "./Navigation";
 import axios from "axios";
+import FilterBanner from "./FIlterBanner";
 
 export default function Homepage() {
 
@@ -26,12 +27,6 @@ export default function Homepage() {
     });
   }, []);
 
-  // const resultsMapped = results.map(result => {
-  //   let value = result.name
-  //   return (<option value={value}>{value}</option>)
-  // })
-
-
 
   return (
     <div>
@@ -54,13 +49,7 @@ export default function Homepage() {
         />
       </nav>
 
-      {results ? <div class="banner">
-        <h1 class="banner-text">BEWARE THE INVASION</h1>
-        <h2 class="banner-pick">Pick A Genre:</h2>
-        <select class="select-genre" name="genre">
-          {resultsMapped}
-        </select>
-      </div> : <h1>Loading</h1>}
+      <FilterBanner />
       <h2 class="featured">Featured Games:</h2>
 
       <div class="game-container">
