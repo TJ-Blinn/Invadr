@@ -26,10 +26,10 @@ export default function Homepage() {
     });
   }, []);
 
-  // const resultsMapped = results.map(result => {
-  //   let value = result.name
-  //   return (<option value={value}>{value}</option>)
-  // })
+  const resultsMapped = results.map(result => {
+    let value = result.name
+    return (<option value={value}>{value}</option>)
+  })
 
 
 
