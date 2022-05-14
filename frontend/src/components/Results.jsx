@@ -5,7 +5,6 @@ import { useState } from "react";
 import Result from "./Result";
 import FilterBanner from "./FIlterBanner";
 
-
 // // const db =
 // // // If we have an API endpoint we want to use we can initialize xios w/ and instance://
 // const api = axios.create({
@@ -18,9 +17,7 @@ import FilterBanner from "./FIlterBanner";
 
 //    }
 
-
 // export default class Results extends Component {
-
 
 //   state = {
 //     games: []
@@ -39,7 +36,6 @@ import FilterBanner from "./FIlterBanner";
 //       console.log(err);
 //     }
 //   }
-
 
 //   // createGame = async () => {
 //   //   let res = await api
@@ -75,36 +71,36 @@ import FilterBanner from "./FIlterBanner";
 // };
 
 export default function Results() {
-
   const [results, setResults] = useState([]);
 
-  let startingURL = "https://api.rawg.io/api/games?key=d355ab68065146b29254681eac449af9";
+  let startingURL =
+    "https://api.rawg.io/api/games?key=d355ab68065146b29254681eac449af9";
 
-  const [genre, setGenre] = useState("")
+  const [genre, setGenre] = useState("");
 
   const update = () => {
     let genreSelect = document.getElementById("select-genre");
-    let genreValue = genreSelect.options[genreSelect.selectedIndex].value
+    let genreValue = genreSelect.options[genreSelect.selectedIndex].value;
+    // console.log("-------------", genreValue);
     return setGenre(genreValue);
-  }
+  };
 
   useEffect(() => {
-
-    axios.get(startingURL).then(response => {
-      setResults(response.data.results)
+    axios.get(startingURL).then((response) => {
+      setResults(response.data.results);
     });
   }, []);
 
-  const gameList = results.map(result => {
-    let value = result.id
-    return (<Result key={value} value={value}></Result>)
-  })
+  const gameList = results.map((result) => {
+    let value = result.id;
+    return <Result key={value} value={value}></Result>;
+  });
 
   return (
     <div>
       <Navigation />
-      <FilterBanner update={update}/>
+      <FilterBanner update={update} />
       {gameList}
     </div>
-  )
+  );
 }
