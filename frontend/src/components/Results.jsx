@@ -3,6 +3,7 @@ import axios from "axios";
 import Navigation from "./Navigation";
 import { useState } from "react";
 import Result from "./Result";
+import FilterBanner from "./FIlterBanner";
 
 
 // // const db =
@@ -77,14 +78,31 @@ export default function Results() {
 
   const [results, setResults] = useState([]);
 
-  const startingURL = "https://api.rawg.io/api/games?key=d355ab68065146b29254681eac449af9";
+  let startingURL = "https://api.rawg.io/api/games?key=d355ab68065146b29254681eac449af9";
 
-  useEffect(() => {
-    axios.get(startingURL).then(response => {
-      console.log(response.data.results)
-      setResults(response.data.results)
-    });
-  }, []);
+  const [genre, setGenre] = useState("")
+
+  const update = () => {
+    let genreSelect = document.getElementById("select-genre");
+    let genreValue = genreSelect.options[genreSelect.selectedIndex].value
+    return setGenre(genreValue);
+  }
+  if (genre) {
+    startingURL += `&genres=${genre}`
+    useEffect(() => {
+      axios.get(startingURL).then(response => {
+        setResults(response.data.results)
+      });
+    }, []);
+  } else {
+    useEffect(() => {
+      axios.get(startingURL).then(response => {
+        setResults(response.data.results)
+      });
+    }, []);
+  }
+
+
 
   const gameList = results.map(result => {
     let value = result.id
@@ -94,6 +112,7 @@ export default function Results() {
   return (
     <div>
       <Navigation />
+      <FilterBanner update={update}/>
       {gameList}
     </div>
   )
