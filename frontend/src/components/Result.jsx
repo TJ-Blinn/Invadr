@@ -14,7 +14,7 @@ export default function Result(props) {
     axios.get(gameURL).then(response => {
       setResult(response.data)
     });
-  }, []);
+  }, [gameURL]);
 
   const onClick = () => {
     setLike((prevLike) => !prevLike)
