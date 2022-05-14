@@ -9,6 +9,7 @@ export default function Result(props) {
 
   const gameURL = `https://api.rawg.io/api/games/${props.value}?key=d355ab68065146b29254681eac449af9`
 
+
   useEffect(() => {
     axios.get(gameURL).then(response => {
       setResult(response.data)
