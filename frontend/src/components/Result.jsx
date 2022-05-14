@@ -13,7 +13,7 @@ export default function Result(props) {
     axios.get(gameURL).then(response => {
       setResult(response.data)
     });
-  }, []);
+  }, [gameURL]);
 
   return (
     <div>
