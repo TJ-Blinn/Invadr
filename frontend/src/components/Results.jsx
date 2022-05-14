@@ -77,6 +77,7 @@ export default function Results() {
 
   const [results, setResults] = useState([]);
 
+
   const startingURL = "https://api.rawg.io/api/games?key=d355ab68065146b29254681eac449af9";
 
   useEffect(() => {
@@ -88,13 +89,19 @@ export default function Results() {
 
   const gameList = results.map(result => {
     let value = result.id
-    return (<Result value={value}></Result>)
+    return (<Result key={ result.id } value={value}></Result>)
   })
 
+
+
+
   return (
+   <>
     <div>
       <Navigation />
       {gameList}
+
     </div>
-  )
+   </>
+  );
 }

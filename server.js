@@ -9,8 +9,8 @@ const app = express();
 const morgan = require("morgan");
 const cookieSession = require("cookie-session");
 
-const cors = require("cors");
-app.use(cors());
+// const cors = require("cors");
+// app.use(cors());
 
 // This is requiring all the data being exported from users.js.
 // The function in the users.js file is using the "router" var name to create user routes
