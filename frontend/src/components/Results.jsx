@@ -93,8 +93,6 @@ export default function Results() {
   }
 
   useEffect(() => {
-
-  useEffect(() => {
     axios.get(URL).then(response => {
       setResults(response.data.results)
     });
