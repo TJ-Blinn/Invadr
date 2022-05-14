@@ -127,3 +127,20 @@ app.get("/about", (req, res) => {
 app.post("/register", (req, res) => {
   res.send("register");
 });
+// -----------------
+
+app.post("/result", (req, res) => {
+  console.log("77777777", req.body);
+  db.query(
+    `INSERT INTO likes (id, user_id, game_id, is_liked)
+    VALUES (1, 1, 1, TRUE)`
+  )
+
+    .then(({ rows }) => {
+      console.log("+++++++++++++++++++", rows);
+      res.status(200).json(rows);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
