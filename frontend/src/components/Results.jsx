@@ -82,7 +82,6 @@ export default function Results() {
   let startingURL = "https://api.rawg.io/api/games?key=d355ab68065146b29254681eac449af9";
 
   const [ URL, setURL ] = useState(startingURL);
-  // startingURL += `genres=${genre}`
 
   const [genre, setGenre] = useState("")
 
@@ -95,9 +94,7 @@ export default function Results() {
 
 
   useEffect(() => {
-
     axios.get(URL).then(response => {
-      console.log(URL)
       setResults(response.data.results)
     });
   }, [URL]);
