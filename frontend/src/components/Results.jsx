@@ -110,5 +110,4 @@ export default function Results() {
       {gameList}
     </div>
   )
-})
 }
