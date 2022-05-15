@@ -136,35 +136,20 @@ app.post("/register", (req, res) => {
 
 /* ----------------------- */
 
-app.get("/test", (req, res) => {
-  db.query(
-    `
-SELECT * FROM likes WHERE user_id = 1;
-`
-    // [userId]
-  )
-    .then(({ rows }) => {
-      // console.log("+++++++++++++++++++", req.params.id);
-      res.status(200).json(rows);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  // res.send("user" + req.params.id);
-});
 
 app.post("/test", (req, res) => {
-  const is_liked = req.body
+  const like = req.body.isLiked;
+  const game = req.body.game_id;
   console.log("77777777", req.body);
   db.query (
 
     `INSERT INTO likes ( user_id, game_id, is_liked)
-     VALUES (2, 87, TRUE)`
+     VALUES (1, $1, $2)`,
+
+         [game, like]
 
     // If the relation exists update the value
     // if not insert
-    //
-
   )
   .then(() => {
     res.status(200).json();
@@ -174,3 +159,57 @@ app.post("/test", (req, res) => {
     res.status(400).json(error);
   });
  });
+
+
+
+
+ /*
+ main/routes.js/router.put
+
+ //Edit posts//
+
+router.put('/api/put/post', (req, res, next) => {
+ const values = [req.body.title, req.body.body, req.body.uid, req.body.pid, req.body.username]
+ pool.query('UPDATE posts SET title = $1, body = $2, user_id = $3, author= $5, date_created = NOW() WHERE pid = $4', values, (q_err, q_res) => {
+  if (q_err) return next(q_err);
+  console.log(q_res)
+  res.json(q_res.rows);
+ });
+});
+
+ ----------------------------------------------
+
+
+
+ /*
+   USER PROFILE ROUTES SECTION
+
+   main/routes.js/router.post
+
+//Save user profile data to the db//
+
+router.post('/api/post/userprofiletodb', (req, res, next) => {
+  const values = [req.body.profile.nickname, req.body.profile.email, req.body.profile.email_verified]
+  pool.query('INSERT INTO users(username, email, date_created, email_verified) VALUES($1, $2, NOW(), $3) ON CONFLICT DO NOTHING', values, (q_err, q_res) => {
+   if (q_err) return next(q_err);
+   console.log(q_res)
+   res.json(q_res.rows);
+  });
+ });
+
+------------------------------------------
+main/routes.js/router.post
+
+//save posts to db//
+
+router.post('/api/post/poststodb', (req, res, next) => {
+ const values = [req.body.title, req.body.body, req.body.uid, req.body.username]
+ pool.query('INSERT INTO posts(title, body, user_id, author, date_created) VALUES($1, $2, $3, $4, NOW())', values, (q_err, q_res) => {
+  if (q_err) return next(q_err);
+  console.log(q_res)
+  res.json(q_res.rows);
+ });
+});
+
+
+ */
