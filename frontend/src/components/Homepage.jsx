@@ -20,12 +20,6 @@ export default function Homepage() {
     });
   }, []);
 
- feature/likes-api-4
-  const resultsMapped = results.map((result) => {
-    let value = result.name;
-    return <option value={value}>{value}</option>;
-  });
-
 
   return (
     <div>

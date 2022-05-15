@@ -19,8 +19,8 @@ CREATE TABLE games (
 
 CREATE TABLE likes (
   id SERIAL PRIMARY KEY NOT NULL,
-  user_id INTEGER REFERENCES users (id),
-  game_id INTEGER REFERENCES games (id),
+  user_id INTEGER,
+  game_id INTEGER,
   is_liked BOOLEAN
 );
 

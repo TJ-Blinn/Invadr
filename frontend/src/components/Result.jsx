@@ -17,9 +17,12 @@ export default function Result(props) {
     });
   }, [gameURL]);
 
+// holly's works on port 8080, mine works on port 3003, amend axios.post in the onClick handler accordingly
+
   const onClick = () => {
-    setLike(true)
-    axios.post("http://localhost:8080/test", {
+    setLike((prevLike) => !prevLike)
+
+    axios.post("http://localhost:3003/test", {
       isLiked: like,
       game_id: props.value
     })

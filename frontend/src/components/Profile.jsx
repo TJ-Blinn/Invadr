@@ -11,7 +11,7 @@ const Profile = function () {
   const [userData, setUserData] = useState({});
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/user/1`)
+      .get(`http://localhost:3003/user/1`)
       // result is what is being returned by axios from the API
       .then((result) => {
         // console.log("===============", result.data);

@@ -76,6 +76,7 @@ app.use("/accounts", userRouter);
 // remove the id from the route on front-end, not needed
 app.get("/user/:id", (req, res) => {
   const userId = req.params.id;
+  console.log(req);
   // console.log("================", req.params.id);
   db.query(
     `
@@ -154,18 +155,19 @@ SELECT * FROM likes WHERE user_id = 1;
 });
 
 app.post("/test", (req, res) => {
-  const is_liked = req.body
+  const likes = req.body.isLiked;
+  const game = req.body.game_id
   console.log("77777777", req.body);
   db.query (
 
     `INSERT INTO likes ( user_id, game_id, is_liked)
-     VALUES (2, 87, TRUE)`
+     VALUES (1, $1, $2)`
 
     // If the relation exists update the value
     // if not insert
     //
 
-  )
+  , [game, likes])
   .then(() => {
     res.status(200).json();
   })
