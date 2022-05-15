@@ -49,19 +49,24 @@ app.use(
     isSass: false, // false => scss, true => sass
   })
 );
+// Parse URL-encoded bodies (as sent by HTML forms)
+app.use(express.urlencoded());
 
+// Parse JSON bodies (as sent by API clients)
+app.use(express.json());
 app.use(express.static("public"));
 
 // Separated Routes for each Resource
 // Note: replace routes below. Ex users and widgets are files held in the db > schema and seeds folders.
 // const userRouteCreator = require("./routes/users");
+// const widgetsRoutes = require("./routes/widgets");
 
 // Mount all resource routes
-// Note: replace routes below. Ex users is a file held in the db > schema and seeds folders.
+// Note: replace routes below. Ex users and widgets are files held in the db > schema and seeds folders.
 const userRouter = userRouteCreator(db);
 
 app.use("/accounts", userRouter);
-// app.use("/api/users", userRoutes(db));
+// app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -85,22 +90,23 @@ SELECT * FROM users WHERE id = $1;
 });
 
 // --------------------------------------
-// SELECT * FROM likes WHERE is_liked = TRUE;
 app.get("/likes", (req, res) => {
+  // const userId = req.params.id;
+  // console.log("================", req.params.id);
   db.query(
     `
-SELECT G.*, L.user_id, L.game_id, L.is_liked FROM games G JOIN likes L ON G.id = L.game_id WHERE L.is_liked = TRUE
-AND L.user_id = $1;
-`,
-    [1]
+SELECT * FROM likes WHERE user_id = 1;
+`
+    // [userId]
   )
     .then(({ rows }) => {
-      console.log("+++++++++++++++++++", rows);
+      // console.log("+++++++++++++++++++", req.params.id);
       res.status(200).json(rows);
     })
     .catch((error) => {
       console.log(error);
     });
+  // res.send("user" + req.params.id);
 });
 
 // ---------------------------------------
@@ -127,20 +133,44 @@ app.get("/about", (req, res) => {
 app.post("/register", (req, res) => {
   res.send("register");
 });
-// -----------------
 
-app.post("/result", (req, res) => {
-  console.log("77777777", req.body);
+/* ----------------------- */
+
+app.get("/test", (req, res) => {
   db.query(
-    `INSERT INTO likes (id, user_id, game_id, is_liked)
-    VALUES (1, 1, 1, TRUE)`
+    `
+SELECT * FROM likes WHERE user_id = 1;
+`
+    // [userId]
   )
-
     .then(({ rows }) => {
-      console.log("+++++++++++++++++++", rows);
+      // console.log("+++++++++++++++++++", req.params.id);
       res.status(200).json(rows);
     })
     .catch((error) => {
       console.log(error);
     });
+  // res.send("user" + req.params.id);
 });
+
+app.post("/test", (req, res) => {
+  const is_liked = req.body
+  console.log("77777777", req.body);
+  db.query (
+
+    `INSERT INTO likes ( user_id, game_id, is_liked)
+     VALUES (2, 87, TRUE)`
+
+    // If the relation exists update the value
+    // if not insert
+    //
+
+  )
+  .then(() => {
+    res.status(200).json();
+  })
+  .catch((error) => {
+    console.log(error);
+    res.status(400).json(error);
+  });
+ });

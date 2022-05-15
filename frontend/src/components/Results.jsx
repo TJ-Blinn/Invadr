@@ -4,6 +4,7 @@ import Navigation from "./Navigation";
 import { useState } from "react";
 import Result from "./Result";
 import FilterBanner from "./FIlterBanner";
+import { CompareSharp } from "@mui/icons-material";
 
 // // const db =
 // // // If we have an API endpoint we want to use we can initialize xios w/ and instance://
@@ -76,20 +77,26 @@ export default function Results() {
   let startingURL =
     "https://api.rawg.io/api/games?key=d355ab68065146b29254681eac449af9";
 
-  const [genre, setGenre] = useState("");
+
+  const [ URL, setURL ] = useState(startingURL);
+
+  const [genre, setGenre] = useState("")
 
   const update = () => {
     let genreSelect = document.getElementById("select-genre");
-    let genreValue = genreSelect.options[genreSelect.selectedIndex].value;
-    // console.log("-------------", genreValue);
-    return setGenre(genreValue);
-  };
+    let genreValue = genreSelect.options[genreSelect.selectedIndex].value
+    setGenre(genreValue);
+    setURL(startingURL + `&genres=${genreValue}`);
+  }
+
+
 
   useEffect(() => {
-    axios.get(startingURL).then((response) => {
-      setResults(response.data.results);
+    axios.get(URL).then(response => {
+      setResults(response.data.results)
+
     });
-  }, []);
+  }, [URL]);
 
   const gameList = results.map((result) => {
     let value = result.id;
@@ -104,3 +111,4 @@ export default function Results() {
     </div>
   );
 }
+
