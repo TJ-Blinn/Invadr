@@ -80,7 +80,9 @@ export default function Results() {
 
   const [ URL, setURL ] = useState(startingURL);
 
-  const [genre, setGenre] = useState("")
+  const [genre, setGenre] = useState("");
+
+  const [likedGames, setLikedGames] = useState([]);
 
   const update = () => {
     let genreSelect = document.getElementById("select-genre");
@@ -93,14 +95,34 @@ export default function Results() {
 
   useEffect(() => {
     axios.get(URL).then(response => {
-      setResults(response.data.results)
-
+      setResults(response.data.results);
+      // make a nested axios call to our own server, to get the games that are liked, and pass them as props to result.jsx, and then render the like button as liked or unliked.
+      axios.get("http://localhost:3003/likes").then(likesResponse=> {
+        const likesArray = likesResponse.data;
+        const gamesLiked = likesArray.map(game => {
+          const gameID = game.game_id
+          return gameID
+        })
+        setLikedGames(gamesLiked);
+      })
     });
+
+
   }, [URL]);
 
   const gameList = results.map((result) => {
     let value = result.id;
-    return <Result key={value} value={value}></Result>;
+    let liked = likedGames.includes(value);
+    const changeLikedForThisGame = (newLiked) => {
+      if (newLiked) {
+        likedGames.push(value);
+        setLikedGames([...likedGames]);
+      } else {
+        const newIDS = likedGames.filter(id => id !== value);
+        setLikedGames(newIDS);
+      }}
+    return <Result key={value} value={value} liked={liked}
+    setLiked={changeLikedForThisGame}></Result>;
   });
 
   return (

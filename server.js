@@ -139,41 +139,46 @@ app.post("/register", (req, res) => {
 
 
 app.post("/test", (req, res) => {
-<<<<<<< HEAD
-  const likes = req.body.isLiked;
-  const game = req.body.game_id
-=======
-  const like = req.body.isLiked;
+  const like = req.body.isLiked; //can only be true or false. When a game is clicked, it will show true
   const game = req.body.game_id;
->>>>>>> 72850424709a50ff24d470b42b59727dcb1f4b9e
   console.log("77777777", req.body);
-  db.query (
 
-    `INSERT INTO likes ( user_id, game_id, is_liked)
-<<<<<<< HEAD
-     VALUES (1, $1, $2)`
+// if we get a true like, do an insert statement
+// if we get a false, do a delete statement
 
-    // If the relation exists update the value
-    // if not insert
-    //
+  if (like === true) {
+    db.query (
 
-  , [game, likes])
-=======
-     VALUES (1, $1, $2)`,
+      `INSERT INTO likes ( user_id, game_id, is_liked)
+       VALUES (1, $1, $2)`
 
-         [game, like]
+      // If the relation exists update the value
+      // if not insert
+      //
 
-    // If the relation exists update the value
-    // if not insert
-  )
->>>>>>> 72850424709a50ff24d470b42b59727dcb1f4b9e
-  .then(() => {
-    res.status(200).json();
-  })
-  .catch((error) => {
-    console.log(error);
-    res.status(400).json(error);
-  });
+    , [game, like])
+    .then(() => {
+      res.status(200).json();
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(400).json(error);
+    });
+  } else if (like === false) {
+    db.query (
+      `DELETE FROM likes WHERE user_id=1 AND game_id =$1`
+    , [game])
+    .then(() => {
+      res.status(200).json();
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(400).json(error);
+    });
+  }
+
+
+
  });
 
 

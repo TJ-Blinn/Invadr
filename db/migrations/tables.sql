@@ -24,6 +24,9 @@ CREATE TABLE likes (
   is_liked BOOLEAN
 );
 
+CREATE UNIQUE INDEX likes_user_id_game_id
+ON likes (user_id, game_id);
+
 CREATE TABLE comments (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users (id),

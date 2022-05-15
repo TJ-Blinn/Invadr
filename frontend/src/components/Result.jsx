@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Navigation from "./Navigation";
 import axios from "axios";
+import { SettingsInputAntennaTwoTone } from "@mui/icons-material";
 
 export default function Result(props) {
 
   const [result, setResult] = useState([]);
-  const [like, setLike] = useState(false);
 
+  const liked = props.liked
 
   const gameURL = `https://api.rawg.io/api/games/${props.value}?key=d355ab68065146b29254681eac449af9`
 
@@ -20,15 +21,16 @@ export default function Result(props) {
 // holly's works on port 8080, mine works on port 3003, amend axios.post in the onClick handler accordingly
 
   const onClick = () => {
-    setLike((prevLike) => !prevLike)
 
     axios.post("http://localhost:3003/test", {
-      isLiked: like,
+      isLiked: !liked,
       game_id: props.value
     })
-    .then((response) => {console.log(response)})
+    .then((response) => {
+      console.log(response);
+      props.setLiked(!liked)
+    })
     .catch((err) => {console.log(err)})
-    console.log("555555555");
   }
 
   return (
@@ -44,7 +46,7 @@ export default function Result(props) {
             {result.description_raw}
           </p>
 
-            <button onClick={ onClick }>{like.toString()}
+            <button onClick={ onClick }>{liked ? "Unlike" : "Like" }
             </button>
 
           <h3>Metacritic score: {result.metacritic}</h3>
