@@ -6,7 +6,6 @@ import Result from "./Result";
 import FilterBanner from "./FIlterBanner";
 import { CompareSharp } from "@mui/icons-material";
 
-
 // // const db =
 // // // If we have an API endpoint we want to use we can initialize xios w/ and instance://
 // const api = axios.create({
@@ -19,9 +18,7 @@ import { CompareSharp } from "@mui/icons-material";
 
 //    }
 
-
 // export default class Results extends Component {
-
 
 //   state = {
 //     games: []
@@ -40,7 +37,6 @@ import { CompareSharp } from "@mui/icons-material";
 //       console.log(err);
 //     }
 //   }
-
 
 //   // createGame = async () => {
 //   //   let res = await api
@@ -76,10 +72,11 @@ import { CompareSharp } from "@mui/icons-material";
 // };
 
 export default function Results() {
-
   const [results, setResults] = useState([]);
 
-  let startingURL = "https://api.rawg.io/api/games?key=d355ab68065146b29254681eac449af9";
+  let startingURL =
+    "https://api.rawg.io/api/games?key=d355ab68065146b29254681eac449af9";
+
 
   const [ URL, setURL ] = useState(startingURL);
 
@@ -97,20 +94,21 @@ export default function Results() {
   useEffect(() => {
     axios.get(URL).then(response => {
       setResults(response.data.results)
+
     });
   }, [URL]);
 
-  const gameList = results.map(result => {
-    let value = result.id
-    return (<Result key={value} value={value}></Result>)
-  })
+  const gameList = results.map((result) => {
+    let value = result.id;
+    return <Result key={value} value={value}></Result>;
+  });
 
   return (
     <div>
       <Navigation />
-      <FilterBanner update={update}/>
+      <FilterBanner update={update} />
       {gameList}
     </div>
-  )
+  );
 }
 

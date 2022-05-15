@@ -4,11 +4,6 @@ import axios from "axios";
 import FilterBanner from "./FIlterBanner";
 
 export default function Homepage() {
-
-
-
-
-
   const [genre, setGenre] = useState("");
   const [results, setResults] = useState([]);
 
@@ -18,14 +13,18 @@ export default function Homepage() {
   const baseGenreURL =
     "https://api.rawg.io/api/games?key=d355ab68065146b29254681eac449af9&genres=";
 
-
   useEffect(() => {
-
-    axios.get(startingURL).then(response => {
-      console.log(response.data.results)
-      setResults(response.data.results)
+    axios.get(startingURL).then((response) => {
+      console.log(response.data.results);
+      setResults(response.data.results);
     });
   }, []);
+
+ feature/likes-api-4
+  const resultsMapped = results.map((result) => {
+    let value = result.name;
+    return <option value={value}>{value}</option>;
+  });
 
 
   return (
@@ -49,7 +48,9 @@ export default function Homepage() {
         />
       </nav>
 
+
       <FilterBanner />
+
       <h2 class="featured">Featured Games:</h2>
 
       <div class="game-container">
