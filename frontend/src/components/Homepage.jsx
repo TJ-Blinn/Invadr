@@ -27,15 +27,6 @@ export default function Homepage() {
     });
   }, []);
 
-<<<<<<< HEAD
-  const resultsMapped = results.map(result => {
-    let value = result.name
-    return (<option value={value}>{value}</option>)
-  })
-
-
-=======
->>>>>>> 79f1e4c52d61639b05f69df22deb0009ed0de3ec
 
   return (
     <div>
