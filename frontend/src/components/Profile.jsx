@@ -3,6 +3,7 @@ import Likes from "./Likes";
 import AccountBoxOutlinedIcon from "@mui/icons-material/AccountBoxOutlined";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Container } from "@mui/material";
 // import Navigation from "./Navigation";
 
 // route for testing only, hard-coded and must be updated later
@@ -24,24 +25,26 @@ const Profile = function () {
   }, []);
 
   return (
-    <aside>
-      <div>
-        <AccountBoxOutlinedIcon sx={{ fontSize: 60 }} />
-        <div className="profile__name">
-          <h2>
-            <span className="profile--bold">{userData.name}</span>
-          </h2>
-        </div>
-
+    <Container>
+      <aside>
         <div>
-          <h2>
-            <span className="profile--bold">{userData.email}</span>
-          </h2>
+          <AccountBoxOutlinedIcon sx={{ fontSize: 60 }} />
+          <div className="profile__name">
+            <h2>
+              <span className="profile--bold">{userData.name}</span>
+            </h2>
+          </div>
+
+          <div>
+            <h2>
+              <span className="profile--bold">{userData.email}</span>
+            </h2>
+          </div>
         </div>
-      </div>
-      <Likes />
-      <br />
-    </aside>
+        <Likes />
+        <br />
+      </aside>
+    </Container>
   );
 };
 
