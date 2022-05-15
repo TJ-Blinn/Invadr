@@ -92,6 +92,8 @@ export default function Results() {
     setURL(startingURL + `&genres=${genreValue}`);
   }
 
+
+
   useEffect(() => {
     axios.get(URL).then(response => {
       setResults(response.data.results)
@@ -111,3 +113,4 @@ export default function Results() {
     </div>
   )
 }
+

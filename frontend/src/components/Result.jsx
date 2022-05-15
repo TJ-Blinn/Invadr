@@ -7,6 +7,7 @@ export default function Result(props) {
   const [result, setResult] = useState([]);
   const [like, setLike] = useState(false);
 
+
   const gameURL = `https://api.rawg.io/api/games/${props.value}?key=d355ab68065146b29254681eac449af9`
 
 
@@ -17,7 +18,13 @@ export default function Result(props) {
   }, [gameURL]);
 
   const onClick = () => {
-    setLike((prevLike) => !prevLike)
+    setLike(true)
+    axios.post("http://localhost:8080/test", {
+      isLiked: like,
+      game_id: props.value
+    })
+    .then((response) => {console.log(response)})
+    .catch((err) => {console.log(err)})
     console.log("555555555");
   }
 
@@ -33,8 +40,10 @@ export default function Result(props) {
           <p className="game-description">
             {result.description_raw}
           </p>
-          <button onClick={ onClick }>{like.toString()}
-      </button>
+
+            <button onClick={ onClick }>{like.toString()}
+            </button>
+
           <h3>Metacritic score: {result.metacritic}</h3>
         </article> : <h1>Loading</h1> }
     </div>
