@@ -31,13 +31,6 @@ export default function Likes() {
       This is a test of Likes for 1 user. The total number of games liked is:{" "}
       {userLikes.length}
       <LikesMapped userLikes={userLikes} />
-      {/* <Profile likes={userLikes} />
-      <button>
-        <div className="like-button">
-          <RecommendOutlinedIcon />
-
-        </div>
-      </button> */}
     </div>
   );
 }
