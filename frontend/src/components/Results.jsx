@@ -77,8 +77,7 @@ export default function Results() {
   let startingURL =
     "https://api.rawg.io/api/games?key=d355ab68065146b29254681eac449af9";
 
-
-  const [ URL, setURL ] = useState(startingURL);
+  const [URL, setURL] = useState(startingURL);
 
   const [genre, setGenre] = useState("");
 
@@ -86,28 +85,24 @@ export default function Results() {
 
   const update = () => {
     let genreSelect = document.getElementById("select-genre");
-    let genreValue = genreSelect.options[genreSelect.selectedIndex].value
+    let genreValue = genreSelect.options[genreSelect.selectedIndex].value;
     setGenre(genreValue);
     setURL(startingURL + `&genres=${genreValue}`);
-  }
-
-
+  };
 
   useEffect(() => {
-    axios.get(URL).then(response => {
+    axios.get(URL).then((response) => {
       setResults(response.data.results);
       // make a nested axios call to our own server, to get the games that are liked, and pass them as props to result.jsx, and then render the like button as liked or unliked.
-      axios.get("http://localhost:3003/likes").then(likesResponse=> {
+      axios.get("http://localhost:3003/likes").then((likesResponse) => {
         const likesArray = likesResponse.data;
-        const gamesLiked = likesArray.map(game => {
-          const gameID = game.game_id
-          return gameID
-        })
+        const gamesLiked = likesArray.map((game) => {
+          const gameID = game.game_id;
+          return gameID;
+        });
         setLikedGames(gamesLiked);
-      })
+      });
     });
-
-
   }, [URL]);
 
   const gameList = results.map((result) => {
@@ -118,11 +113,18 @@ export default function Results() {
         likedGames.push(value);
         setLikedGames([...likedGames]);
       } else {
-        const newIDS = likedGames.filter(id => id !== value);
+        const newIDS = likedGames.filter((id) => id !== value);
         setLikedGames(newIDS);
-      }}
-    return <Result key={value} value={value} liked={liked}
-    setLiked={changeLikedForThisGame}></Result>;
+      }
+    };
+    return (
+      <Result
+        key={value}
+        value={value}
+        liked={liked}
+        setLiked={changeLikedForThisGame}
+      ></Result>
+    );
   });
 
   return (
@@ -133,4 +135,3 @@ export default function Results() {
     </div>
   );
 }
-

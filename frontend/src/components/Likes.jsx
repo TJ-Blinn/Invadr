@@ -16,7 +16,7 @@ export default function Likes() {
 
   const getAllLikes = () => {
     axios
-      .get(`http://localhost:3003/likes/`)
+      .get(`http://localhost:8080/likes/`)
       // result is what is being returned by axios from the API
       .then((result) => {
         console.log("2222222222222", result.data);
