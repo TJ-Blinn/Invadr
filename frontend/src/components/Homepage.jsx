@@ -4,7 +4,7 @@ import axios from "axios";
 import FilterBanner from "./FIlterBanner";
 
 export default function Homepage() {
-  const [genre, setGenre] = useState("");
+  // const [genre, setGenre] = useState("");
   const [results, setResults] = useState([]);
 
   const startingURL =
@@ -20,12 +20,10 @@ export default function Homepage() {
     });
   }, []);
 
- feature/likes-api-4
   const resultsMapped = results.map((result) => {
     let value = result.name;
     return <option value={value}>{value}</option>;
   });
-
 
   return (
     <div>
@@ -47,7 +45,6 @@ export default function Homepage() {
           height="100"
         />
       </nav>
-
 
       <FilterBanner />
 
