@@ -2,7 +2,7 @@
 require("dotenv").config();
 
 // Web server config
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3003;
 const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
@@ -137,54 +137,51 @@ app.post("/register", (req, res) => {
 
 /* ----------------------- */
 
-
 app.post("/test", (req, res) => {
+  console.log("++++++++++++++++", req);
   const like = req.body.isLiked; //can only be true or false. When a game is clicked, it will show true
   const game = req.body.game_id;
   console.log("77777777", req.body);
 
-// if we get a true like, do an insert statement
-// if we get a false, do a delete statement
+  // if we get a true like, do an insert statement
+  // if we get a false, do a delete statement
 
   if (like === true) {
-    db.query (
+    // ADD a new query with Select statement (if [] then there is no game, then insert)
+    // hit the db, check for the game_id
+    // if game id is here, delete it, if
+    // chain promises for the SELECT with the next the if statement + .then ? if statement, is it doesn't exist, INSERT into games table
 
+    db.query(
       `INSERT INTO likes ( user_id, game_id, is_liked)
-       VALUES (1, $1, $2)`
+       VALUES (1, $1, $2)`,
 
       // If the relation exists update the value
       // if not insert
       //
 
-    , [game, like])
-    .then(() => {
-      res.status(200).json();
-    })
-    .catch((error) => {
-      console.log(error);
-      res.status(400).json(error);
-    });
+      [game, like]
+    )
+      .then(() => {
+        res.status(200).json();
+      })
+      .catch((error) => {
+        console.log(error);
+        res.status(400).json(error);
+      });
   } else if (like === false) {
-    db.query (
-      `DELETE FROM likes WHERE user_id=1 AND game_id =$1`
-    , [game])
-    .then(() => {
-      res.status(200).json();
-    })
-    .catch((error) => {
-      console.log(error);
-      res.status(400).json(error);
-    });
+    db.query(`DELETE FROM likes WHERE user_id=1 AND game_id =$1`, [game])
+      .then(() => {
+        res.status(200).json();
+      })
+      .catch((error) => {
+        console.log(error);
+        res.status(400).json(error);
+      });
   }
+});
 
-
-
- });
-
-
-
-
- /*
+/*
  main/routes.js/router.put
 
  //Edit posts//
