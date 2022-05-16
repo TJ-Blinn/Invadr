@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS likes, comments, games, users;
+DROP TABLE IF EXISTS likes, comments, games, users CASCADE;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
