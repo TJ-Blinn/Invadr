@@ -8,6 +8,19 @@ import LikesMapped from "./LikesMapped";
 export default function Likes() {
   const [userLikes, setUserLikes] = useState([]);
 
+  // This will pass the game_id to the LikesMapped component
+  // on Likes.jsx, we are making an api get request to our likes table, to find all the games that are liked
+  //we are saving those liked games into an array, then mapping through the array,
+  //  and returning a Likes Mapped component, and passing the liked game id as a prop
+  const likesList = userLikes.map((game) => {
+    let gameId = game.game_id;
+    return (
+      <div>
+        <LikesMapped gameId={gameId} />
+      </div>
+    );
+  });
+
   // We will use the useEffect hook to call this function when the Parent component mounts.
   // useEffect runs after the component is rendered, only run on render,
   useEffect(() => {
@@ -16,21 +29,21 @@ export default function Likes() {
 
   const getAllLikes = () => {
     axios
-      .get(`http://localhost:8080/likes/`)
+      .get(`http://localhost:3003/likes/`)
       // result is what is being returned by axios from the API
       .then((result) => {
-        console.log("2222222222222", result.data);
+        // console.log("2222222222222", result.data);
         // setUserLikes(result.data);
         const allLikes = result.data;
         setUserLikes(allLikes);
+        // console.log("++++++++++++++++++++++", userLikes);
       })
       .catch((error) => console.error(`Error: $error)`));
   };
-  return (
-    <div>
-      This is a test of Likes for 1 user. The total number of games liked is:{" "}
-      {userLikes.length}
-      <LikesMapped userLikes={userLikes} />
-    </div>
-  );
+
+  return <div>{likesList}</div>;
 }
+
+// This is a test of Likes for 1 user. The total number of games liked is:{" "}
+//       {userLikes.length}
+//       <LikesMapped userLikes={userLikes} />
