@@ -17,7 +17,7 @@ export default function LikesMapped(props) {
   // console.log("111111111111111", props);
   const gameId = props.gameId;
 
-  const gameURL = `https://api.rawg.io/api/games/${gameId}?key=d355ab68065146b29254681eac449af9`;
+  const gameURL = `https://api.rawg.io/api/games/${gameId}?key=4d6e63aaf07b45ada62f971b8736e525`;
 
   // response.data = the full payload from the Rawg call
   useEffect(() => {
