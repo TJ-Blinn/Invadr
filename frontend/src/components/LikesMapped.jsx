@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {
-  ImageList,
-  ImageListItem,
-  ImageListItemBar,
-  Container,
-} from "@mui/material";
+import { ImageListItem, ImageListItemBar } from "@mui/material";
+import { shadows, borders } from "@mui/system";
+import "../App.css";
 
 // This is the child component for Likes
 // on LikesMapped.jsx, we can accessing the like game id through props.gameId, then we make an api call to RAWG to
@@ -52,11 +49,20 @@ export default function LikesMapped(props) {
 
     <div>
       {result ? (
-        <ImageListItem sx={{ width: 500, height: 500 }}>
+        <ImageListItem
+          sx={{
+            width: 500,
+            height: 500,
+            boxShadow: 4,
+            borderRadius: 8,
+            p: 2,
+            m: 2,
+          }}
+        >
           <img
-            // style={{ width: 250, height: 250 }}
-            src={`${result.background_image}?w=24&fit=crop&auto=format`}
-            srcSet={`${result.background_image}?w=24&fit=crop&auto=format&dpr=2 2x`}
+            style={{ borderRadius: 8, whiteSpace: "normal" }}
+            src={`${result.background_image}?w=240&fit=crop&auto=format`}
+            srcSet={`${result.background_image}?w=240&fit=crop&auto=format&dpr=2 2x`}
             alt={result.name}
             loading="lazy"
           />
@@ -65,7 +71,7 @@ export default function LikesMapped(props) {
             title={result.name}
             subtitle={result.description_raw}
             position="below"
-            sx={{ margin: 1 }}
+            sx={{ margin: 1, fontWeight: "medium" }}
           />
         </ImageListItem>
       ) : (

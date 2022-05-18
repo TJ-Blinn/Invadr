@@ -44,7 +44,7 @@ export default function Likes() {
   };
 
   return (
-    <ImageList sx={{ maxHeight: "400px" }} cols={2} gap={10}>
+    <ImageList sx={{ maxHeight: "100%" }} cols={2} gap={10}>
       {likesList}
     </ImageList>
   );
