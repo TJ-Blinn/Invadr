@@ -155,4 +155,21 @@
   font-size: larger;
 }
 
+.css-186gwnw-MuiImageListItemBar-titleWrap .css-hk6gwf-MuiImageListItemBar-subtitle {
+  white-space: normal;
+}
 
+/* #root {
+  background-color: rgba(52, 194, 30, 0.75)
+} */
+
+/* Transparency styling for each card of the liked games on the profile page */
+.css-1t7wq94-MuiImageListItem-root {
+ /* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+}

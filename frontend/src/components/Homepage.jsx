@@ -12,8 +12,10 @@ export default function Homepage() {
   // const startingURL =
   //   "https://api.rawg.io/api/genres?key=4d6e63aaf07b45ada62f971b8736e525";
 
+
   // const baseGenreURL =
   //   "https://api.rawg.io/api/games?key=d355ab68065146b29254681eac449af9&genres=";
+
 
   // useEffect(() => {
   //   axios.get(startingURL).then((response) => {
@@ -21,7 +23,6 @@ export default function Homepage() {
   //     setResults(response.data.results);
   //   });
   // }, []);
-
 
   return (
     <div>
@@ -43,7 +44,6 @@ export default function Homepage() {
           height="100"
         />
       </nav>
-
 
       <FilterBanner />
 
