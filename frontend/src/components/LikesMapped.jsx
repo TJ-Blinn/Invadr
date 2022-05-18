@@ -31,7 +31,7 @@ export default function LikesMapped(props) {
       })
       .then((response) => {
         console.log(response);
-        props.setLiked(!liked);
+        setLiked(!liked);
       })
       .catch((err) => {
         console.log(err);
