@@ -154,14 +154,23 @@
   padding: 5%;
   font-size: larger;
 }
+/* ---------- PROFILE LIKES IMAGES ----------- */
 
 .css-186gwnw-MuiImageListItemBar-titleWrap .css-hk6gwf-MuiImageListItemBar-subtitle {
   white-space: normal;
+  color:antiquewhite;
 }
 
-/* #root {
-  background-color: rgba(52, 194, 30, 0.75)
-} */
+.css-8m3eu1-MuiImageListItemBar-root {
+  color:antiquewhite;
+}
+
+#root {
+  background-image: url("./files/vector-jan-2021-45.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 /* Transparency styling for each card of the liked games on the profile page */
 .css-1t7wq94-MuiImageListItem-root {
