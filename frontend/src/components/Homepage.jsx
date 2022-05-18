@@ -1,24 +1,28 @@
 import React, { useEffect, useState } from "react";
 import Navigation from "./Navigation";
 import axios from "axios";
-import FilterBanner from "./FIlterBanner";
+import FilterBanner from "./FilterBanner";
+import Results from "./Results";
+
 
 export default function Homepage() {
-  const [genre, setGenre] = useState("");
-  const [results, setResults] = useState([]);
+  // const [genre, setGenre] = useState("");
+  // const [results, setResults] = useState([]);
 
-  const startingURL =
-    "https://api.rawg.io/api/genres?key=4d6e63aaf07b45ada62f971b8736e525";
+  // const startingURL =
+  //   "https://api.rawg.io/api/genres?key=4d6e63aaf07b45ada62f971b8736e525";
 
-  const baseGenreURL =
-    "https://api.rawg.io/api/games?key=4d6e63aaf07b45ada62f971b8736e525&genres=";
 
-  useEffect(() => {
-    axios.get(startingURL).then((response) => {
-      console.log(response.data.results);
-      setResults(response.data.results);
-    });
-  }, []);
+  // const baseGenreURL =
+  //   "https://api.rawg.io/api/games?key=d355ab68065146b29254681eac449af9&genres=";
+
+
+  // useEffect(() => {
+  //   axios.get(startingURL).then((response) => {
+  //     console.log(response.data.results);
+  //     setResults(response.data.results);
+  //   });
+  // }, []);
 
   return (
     <div>
