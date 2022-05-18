@@ -79,7 +79,13 @@ export default function LikesMapped(props) {
             alt={result.name}
             loading="lazy"
           />
-          <button onClick={onClick}>{liked ? "Unlike" : "Like"}</button>
+          <button
+            onClick={onClick}>
+                <div>{liked ?
+                  <img style={{ height: "1em", width: "auto"}} src={require("../files/fullheart.png")} />
+                  :
+                  <img src={require("../files/emptyheart.png")} /> }</div>
+                </button>
           <ImageListItemBar
             // style={{ width: 250, height: 250 }}
             title={result.name}
