@@ -29,6 +29,7 @@ export default function Likes() {
     getAllLikes();
   }, []);
 
+
   const getAllLikes = () => {
     axios
       .get(`http://localhost:3003/likes/`)

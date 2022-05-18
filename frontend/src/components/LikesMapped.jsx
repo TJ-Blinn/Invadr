@@ -66,6 +66,7 @@ export default function LikesMapped(props) {
             alt={result.name}
             loading="lazy"
           />
+          <button></button>
           <ImageListItemBar
             // style={{ width: 250, height: 250 }}
             title={result.name}
