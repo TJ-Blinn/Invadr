@@ -8,7 +8,7 @@ export default function Result(props) {
 
   const liked = props.liked;
 
-  const gameURL = `https://api.rawg.io/api/games/${props.value}?key=d355ab68065146b29254681eac449af9`;
+  const gameURL = `https://api.rawg.io/api/games/${props.value}?key=4d6e63aaf07b45ada62f971b8736e525`;
 
   useEffect(() => {
     axios.get(gameURL).then((response) => {
