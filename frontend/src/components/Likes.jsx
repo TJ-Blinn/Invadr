@@ -28,7 +28,7 @@ export default function Likes() {
   // useEffect runs after the component is rendered, only run on render,
   useEffect(() => {
     getAllLikes();
-  }, []);
+  }, [userLikes]);
 
 
   const getAllLikes = () => {

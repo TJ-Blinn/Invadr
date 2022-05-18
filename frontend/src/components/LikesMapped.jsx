@@ -12,7 +12,7 @@ import "../App.css";
 export default function LikesMapped(props) {
   const [result, setResult] = useState([]);
   const gameId = props.gameId;
-  const [liked, setLiked] = useState(true);
+  const liked = true;
   const gameURL = `https://api.rawg.io/api/games/${gameId}?key=4d6e63aaf07b45ada62f971b8736e525`;
 
   // response.data = the full payload from the Rawg call
@@ -31,7 +31,6 @@ export default function LikesMapped(props) {
       })
       .then((response) => {
         console.log(response);
-        setLiked(!liked);
       })
       .catch((err) => {
         console.log(err);
