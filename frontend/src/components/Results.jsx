@@ -75,7 +75,7 @@ export default function Results() {
   const [results, setResults] = useState([]);
 
   let startingURL =
-    "https://api.rawg.io/api/games?key=d355ab68065146b29254681eac449af9";
+    "https://api.rawg.io/api/games?key=4d6e63aaf07b45ada62f971b8736e525";
 
   const [URL, setURL] = useState(startingURL);
 
