@@ -97,7 +97,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: purple;
+  /* background-color: purple; */
   margin: 5%;
 }
 .game-title {
@@ -118,16 +118,34 @@
   width: 37%;
 }
 
-.card-1 {
-  background-color: yellow;
+/* .card-1 {
+  background-color: black;
+} */
+/* Transparency styling for each card of the Homepage */
+.css-10nhwq6-MuiImageListItem-root {
+  background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .card-2 {
-  color: tomato;
+  /* color: tomato; */
 }
 
 .card-3 {
-  background-color: black;
+  /* background-color: black; */
+}
+/* Transparency styling for each card of the */
+.css-1fvmzl6-MuiImageListItem-root {
+  background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* --------------------- */

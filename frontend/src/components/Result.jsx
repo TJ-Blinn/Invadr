@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Navigation from "./Navigation";
 import axios from "axios";
 import { SettingsInputAntennaTwoTone } from "@mui/icons-material";
+import { ImageList, ImageListItem, ImageListItemBar } from "@mui/material";
+import "../App.css";
 
 export default function Result(props) {
   const [result, setResult] = useState([]);
@@ -36,19 +38,44 @@ export default function Result(props) {
   return (
     <div>
       {result ? (
+        <ImageListItem
+        sx={{
+          width: 500,
+          height: 500,
+          boxShadow: 4,
+          borderRadius: 8,
+          p: 2,
+          m: 2,
+        }}
+      >
+        <img
+            style={{ borderRadius: 8, whiteSpace: "normal" }}
+            src={`${result.background_image}?w=240&fit=crop&auto=format`}
+            srcSet={`${result.background_image}?w=240&fit=crop&auto=format&dpr=2 2x`}
+            alt={result.name}
+            loading="lazy"
+          />
+          <ImageListItemBar
+            // style={{ width: 250, height: 250 }}
+            title={result.name}
+            subtitle={result.description_raw}
+            position="below"
+            sx={{ margin: 1, fontWeight: "medium" }}
+          />
         <article className="game-card">
-          <h3 className="game-title">{result.name}</h3>
+          {/* <h3 className="game-title">{result.name}</h3>
           <img
             className="game-image"
             src={result.background_image}
             alt="game image"
           />
-          <p className="game-description">{result.description_raw}</p>
+          <p className="game-description">{result.description_raw}</p> */}
 
           <button onClick={onClick}>{liked ? "Unlike" : "Like"}</button>
 
           <h3>Metacritic score: {result.metacritic}</h3>
         </article>
+        </ImageListItem>
       ) : (
         <h1>Loading</h1>
       )}
