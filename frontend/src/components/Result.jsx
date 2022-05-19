@@ -45,7 +45,12 @@ export default function Result(props) {
           />
           <p className="game-description">{result.description_raw}</p>
 
-          <button onClick={onClick}>{liked ? "Unlike" : "Like"}</button>
+
+          <button onClick={onClick}>{liked ?
+                  <img style={{ height: "1em", width: "auto"}} src={require("../files/fullheart.png")} />
+                  :
+                  <img style={{ height: "1em", width: "auto"}} src={require("../files/emptyheart.png")} />
+                  }</button>
 
           <h3>Metacritic score: {result.metacritic}</h3>
         </article>
