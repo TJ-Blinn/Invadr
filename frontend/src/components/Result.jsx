@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navigation from "./Navigation";
 import axios from "axios";
 import { SettingsInputAntennaTwoTone } from "@mui/icons-material";
-import { ImageList, ImageListItem, ImageListItemBar } from "@mui/material";
+import { Stack, ImageListItem, ImageListItemBar } from "@mui/material";
 import "../App.css";
 
 export default function Result(props) {
@@ -38,6 +38,8 @@ export default function Result(props) {
   return (
     <div>
       {result ? (
+        <Stack alignItems="center" spacing={2}
+        >
         <ImageListItem
         sx={{
           width: 500,
@@ -76,6 +78,7 @@ export default function Result(props) {
           <h3>Metacritic score: {result.metacritic}</h3>
         </article>
         </ImageListItem>
+        </Stack>
       ) : (
         <h1>Loading</h1>
       )}

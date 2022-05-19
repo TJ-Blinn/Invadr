@@ -6,6 +6,8 @@ import Result from "./Result";
 import FilterBanner from "./FilterBanner";
 import { CompareSharp } from "@mui/icons-material";
 import { useLocation } from "react-router-dom";
+import "../App.css";
+import { ImageList, ImageListItem, ImageListItemBar, Stack} from "@mui/material";
 
 
 
@@ -102,12 +104,16 @@ useEffect(() => {
       }
     };
     return (
+
+
       <Result
         key={value}
         value={value}
         liked={liked}
         setLiked={changeLikedForThisGame}
       ></Result>
+
+
     );
   });
 
