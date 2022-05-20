@@ -44,6 +44,7 @@ const Profile = function () {
         <Likes />
         <br />
       </aside>
+
     </Container>
   );
 };

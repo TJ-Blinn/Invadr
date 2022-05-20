@@ -82,7 +82,7 @@ useEffect(() => {
   //       const likesArray = likesResponse.data;
   //       const gamesLiked = likesArray.map((game) => {
   //         const gameID = game.game_id;
-  //         return gameID;
+  //         return gameID;liked
   //       });
   //       setLikedGames(gamesLiked);
   //     });

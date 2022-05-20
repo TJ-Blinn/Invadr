@@ -16,6 +16,7 @@ export default function Likes() {
   // --------------------------- Likes list is sending each game card the id of the game that is liked
   const likesList = userLikes.map((game) => {
     let gameId = game.game_id;
+
     return (
       <div>
         <LikesMapped gameId={gameId} />
@@ -27,7 +28,8 @@ export default function Likes() {
   // useEffect runs after the component is rendered, only run on render,
   useEffect(() => {
     getAllLikes();
-  }, []);
+  }, [userLikes]);
+
 
   const getAllLikes = () => {
     axios

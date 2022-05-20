@@ -12,7 +12,7 @@ import "../App.css";
 export default function LikesMapped(props) {
   const [result, setResult] = useState([]);
   const gameId = props.gameId;
-
+  const liked = true;
   const gameURL = `https://api.rawg.io/api/games/${gameId}?key=4d6e63aaf07b45ada62f971b8736e525`;
 
   // response.data = the full payload from the Rawg call
@@ -22,7 +22,20 @@ export default function LikesMapped(props) {
     });
   }, [gameURL]);
   // Result is the payload from RAWG
-  console.log("999999999999", result);
+
+  const onClick = () => {
+    axios
+      .post("http://localhost:3003/test", {
+        isLiked: !liked,
+        game_id: gameId,
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     // <Container maxWidth="md">
     // <div
@@ -66,6 +79,13 @@ export default function LikesMapped(props) {
             alt={result.name}
             loading="lazy"
           />
+          <button
+            onClick={onClick}>
+                <div>{liked ?
+                  <img style={{ height: "1em", width: "auto"}} src={require("../files/fullheart.png")} />
+                  :
+                  <img src={require("../files/emptyheart.png")} /> }</div>
+                </button>
           <ImageListItemBar
             // style={{ width: 250, height: 250 }}
             title={result.name}
