@@ -24,14 +24,8 @@ const theme = createTheme({
 
     body1: {
       fontFamily: "Helvetica",
-
-
-
-    }
+   }
   }
-
-
-
 })
 
 
@@ -50,10 +44,11 @@ export default function Homepage() {
       <ThemeProvider theme={theme}>
       <Typography
       variant="h3"
-      color="secondary"
+      color="primary"
       align="center"
       sx={{
-        lineHeight: 1.5,
+        // lineHeight: 1.5,
+        p: 2
       }}
       >
       Featured Games:

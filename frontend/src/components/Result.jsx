@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navigation from "./Navigation";
 import axios from "axios";
 import { SettingsInputAntennaTwoTone } from "@mui/icons-material";
-import { Stack, ImageListItem, ImageListItemBar } from "@mui/material";
+import { Stack, ImageListItem, ImageListItemBar, Typography } from "@mui/material";
 import "../App.css";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { lightGreen } from '@mui/material/colors';
@@ -20,7 +20,7 @@ export default function Result(props) {
     });
   }, [gameURL]);
 
-  // holly's works on port 8080, mine works on port 3003, amend axios.post in the onClick handler accordingly
+
 
   const onClick = () => {
     axios
@@ -49,6 +49,9 @@ export default function Result(props) {
       fontFamily: 'Bungee',
 
 
+      body1: {
+        fontFamily: "Helvetica",
+     }
     }
   })
 
@@ -80,7 +83,12 @@ export default function Result(props) {
             title={result.name}
             subtitle={result.description_raw}
             position="below"
-            sx={{ margin: 1, fontWeight: "medium" }}
+            sx={{
+              margin: 1,
+              fontWeight: "medium",
+              fontFamily: "Helvetica",
+              p: 3
+            }}
           />
         <article className="game-card">
           {/* <h3 className="game-title">{result.name}</h3>

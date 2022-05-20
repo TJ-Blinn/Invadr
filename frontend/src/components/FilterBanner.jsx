@@ -3,6 +3,9 @@ import Navigation from "./Navigation";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Stack, ImageListItem, ImageListItemBar, Typography } from "@mui/material";
+import { lightGreen } from '@mui/material/colors';
 
 export default function FilterBanner(props) {
   const [genres, setGenres] = useState([]);
@@ -41,17 +44,56 @@ export default function FilterBanner(props) {
     return (<option key={i} value={value}>{text}</option>)
   });
 
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#ffebee',
+        contrastText: 'A400'
+      },
+      secondary: lightGreen
+    },
+    typography: {
+      fontFamily: 'Bungee',
+
+
+      body1: {
+        fontFamily: "Helvetica",
+     }
+    }
+  })
+
 
   return (
     <div>
+      <ThemeProvider theme={theme}>
       {genres ? <div class="banner">
-        <h1 class="banner-text">BEWARE THE INVASION</h1>
-        <h2 class="banner-pick">Pick A Genre:</h2>
+      <Typography
+      variant="h3"
+      color="secondary"
+      align="center"
+      sx={{
+        // lineHeight: 1.5,
+        p: 3
+      }}
+      >
+        BEWARE THE INVASION
+        </Typography>
+        <Typography
+      variant="h5"
+      color="secondary"
+      align="center"
+      sx={{
+        p: 1
+      }}
+      >
+      Pick A Genre:
+        </Typography>
         <select id="select-genre" name="genre" onChange={handleGenreSearch}>
           {genresMapped}
         </select>
       </div> : <h1>Loading</h1>}
 
+      </ThemeProvider>
     </div>
   );
 };
