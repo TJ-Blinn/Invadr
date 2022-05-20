@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navigation from "./Navigation";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "../App.css";
 
 export default function FilterBanner(props) {
   const [genres, setGenres] = useState([]);

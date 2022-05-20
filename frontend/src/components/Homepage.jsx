@@ -21,8 +21,11 @@ const theme = createTheme({
   typography: {
     fontFamily: 'Bungee',
 
+
     body1: {
-      fontFamily: "Helvetica"
+      fontFamily: "Helvetica",
+
+
 
     }
   }
@@ -50,7 +53,7 @@ export default function Homepage() {
       color="secondary"
       align="center"
       sx={{
-        // fontFamily: 'Bebas Neue'
+        lineHeight: 1.5,
       }}
       >
       Featured Games:
@@ -79,6 +82,10 @@ export default function Homepage() {
             <Typography
       variant="h3"
       color="primary"
+      align="center"
+      sx={{
+        p: 3
+      }}
       >
       Limbo
       </Typography>
@@ -86,6 +93,7 @@ export default function Homepage() {
 
           <Typography
       color="primary"
+      align="center"
       >
          This popular 2D puzzle-platformer creates the atmosphere of isolation, where the player alone can guide the nameless protagonist to his destination. Hostile environments and one-hit deaths may seem difficult, but the game implements a fair amount of checkpoints. The monochrome color palette showcases cartoony proportions of every living thing while making lack of details threatening. Limbo shows you exactly what you encounter, but never how it looks. Limbo uses the atmosphere and sound design of the horror genre while avoiding tropes of the modern horror games. The overarching theme and unique style compensated for the rather short game with an abrupt ending, making Limbo one of the most impactful games for the genre. The simple controls and easy-to-pick-up mechanics help to make a clear distinction, which part of the stage players can interact with, and which part can lead to the quick death. Even though the game is in black and white, this separation is intuitive and natural, so the player would know exactly where to go or what to do.
 
@@ -120,11 +128,16 @@ export default function Homepage() {
            <Typography
       variant="h3"
       color="primary"
+      align="center"
+      sx={{
+        p: 3
+      }}
       >
       Darkest Dungeon
       </Typography>
           <Typography
       color="primary"
+      align="center"
       >
           Darkest Dungeon is a roguelike RPG developed by Red Hook Studios.
 
@@ -133,7 +146,7 @@ The works of Howard Lovecraft served as the main inspiration for the game which 
 The story begins when the player learns that they inherited a manor from a distant relative who died excavating the catacombs under the manor and accidentally released a number of monsters.
 
 The player controls a group of adventure seekers that explore the dungeons beneath an old manor. Before every expedition, the player has to choose several heroes from the suggested roster and lead them through procedurally generated dungeons collecting treasures and killing various monsters.
-          /</Typography>
+          </Typography>
           <h3>
             Metacritic Score:
             84
@@ -163,12 +176,16 @@ The player controls a group of adventure seekers that explore the dungeons benea
            <Typography
       variant="h3"
       color="primary"
+      align="center"
+      sx={{
+        p: 3
+      }}
       >
       World of Goo
       </Typography>
           <Typography
       color="primary"
-
+      align="center"
       >
           World of Goo is a physical construction puzzle.
 
@@ -202,12 +219,16 @@ The player controls a group of adventure seekers that explore the dungeons benea
            <Typography
       variant="h3"
       color="primary"
+      align="center"
+      sx={{
+        p: 3
+      }}
       >
       Braid
       </Typography>
           <Typography
       color="primary"
-      variant="body1"
+      align="center"
       >
           Braid is a traditional platform game with puzzle solving. The story follows the main character Tim on his way through twisted 2D levels. According to the storyline, Tim’s aim is to rescue the princess from a monster. In the course of the completion, players will be able to get some additional information about the protagonist’s relationship with the princess. Players control the protagonist as he climbs platforms, jumps on the enemies to defeat them and to collect keys to hidden quests and mosaic parts. Players have to lead Tim through 6 worlds, each based on an intriguing time mechanic, as Tim features the ability to rewind the original pace of time. For example, Time and Forgiveness world allows respawning Tim after his death by switching time back. To attend the last level, Tim must assemble the mosaic. The story ends in the world simply called “1”, where time flows in reverse and returns to the normal pace by rewinding. The last room of the final world contains Tim’s meeting with the princess, but, due to the time pace turned back, players face some unpredictable twists of the plot.
           </Typography>
