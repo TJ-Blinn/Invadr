@@ -4,6 +4,8 @@ import axios from "axios";
 import { SettingsInputAntennaTwoTone } from "@mui/icons-material";
 import { Stack, ImageListItem, ImageListItemBar } from "@mui/material";
 import "../App.css";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { lightGreen } from '@mui/material/colors';
 
 export default function Result(props) {
   const [result, setResult] = useState([]);
@@ -35,9 +37,25 @@ export default function Result(props) {
       });
   };
 
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#ffebee',
+        contrastText: 'A400'
+      },
+      secondary: lightGreen
+    },
+    typography: {
+      fontFamily: 'Bungee',
+
+
+    }
+  })
+
   return (
     <div>
       {result ? (
+        <ThemeProvider theme={theme}>
         <Stack alignItems="center" spacing={2}
         >
         <ImageListItem
@@ -79,6 +97,7 @@ export default function Result(props) {
         </article>
         </ImageListItem>
         </Stack>
+        </ThemeProvider>
       ) : (
         <h1>Loading</h1>
       )}

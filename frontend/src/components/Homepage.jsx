@@ -13,12 +13,22 @@ const color = lightGreen['A400'];
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#76ff03',
-      secondary: '#76ff03'
+      main: '#ffebee',
+      contrastText: 'A400'
+    },
+    secondary: lightGreen
+  },
+  typography: {
+    fontFamily: 'Bungee',
 
+    body1: {
+      fontFamily: "Helvetica"
 
     }
   }
+
+
+
 })
 
 
@@ -37,8 +47,11 @@ export default function Homepage() {
       <ThemeProvider theme={theme}>
       <Typography
       variant="h3"
-      color="primary"
+      color="secondary"
       align="center"
+      sx={{
+        // fontFamily: 'Bebas Neue'
+      }}
       >
       Featured Games:
       </Typography>
@@ -69,13 +82,8 @@ export default function Homepage() {
       >
       Limbo
       </Typography>
-            {/* <ImageListItemBar
-            // style={{ width: 250, height: 250 }}
-            title="Limbo"
-            // subtitle={result.description_raw}
-            position="below"
-            sx={{ margin: 1, fontWeight: "medium" }}
-          /> */}
+
+
           <Typography
       color="primary"
       >
@@ -160,6 +168,7 @@ The player controls a group of adventure seekers that explore the dungeons benea
       </Typography>
           <Typography
       color="primary"
+
       >
           World of Goo is a physical construction puzzle.
 
@@ -198,6 +207,7 @@ The player controls a group of adventure seekers that explore the dungeons benea
       </Typography>
           <Typography
       color="primary"
+      variant="body1"
       >
           Braid is a traditional platform game with puzzle solving. The story follows the main character Tim on his way through twisted 2D levels. According to the storyline, Tim’s aim is to rescue the princess from a monster. In the course of the completion, players will be able to get some additional information about the protagonist’s relationship with the princess. Players control the protagonist as he climbs platforms, jumps on the enemies to defeat them and to collect keys to hidden quests and mosaic parts. Players have to lead Tim through 6 worlds, each based on an intriguing time mechanic, as Tim features the ability to rewind the original pace of time. For example, Time and Forgiveness world allows respawning Tim after his death by switching time back. To attend the last level, Tim must assemble the mosaic. The story ends in the world simply called “1”, where time flows in reverse and returns to the normal pace by rewinding. The last room of the final world contains Tim’s meeting with the princess, but, due to the time pace turned back, players face some unpredictable twists of the plot.
           </Typography>
@@ -205,6 +215,7 @@ The player controls a group of adventure seekers that explore the dungeons benea
             Metacritic Score:
             92
           </h3>
+
 
         </article>
           </ImageListItem>
