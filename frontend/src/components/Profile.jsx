@@ -4,7 +4,7 @@ import AccountBoxOutlinedIcon from "@mui/icons-material/AccountBoxOutlined";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Container } from "@mui/material";
-// import Navigation from "./Navigation";
+import Navigation from "./Navigation";
 
 // route for testing only, hard-coded and must be updated later
 const Profile = function () {
@@ -26,6 +26,9 @@ const Profile = function () {
 
   return (
     <Container>
+      <div>
+        <Navigation />
+      </div>
       <aside>
         <div>
           <AccountBoxOutlinedIcon sx={{ fontSize: 60 }} />
@@ -44,7 +47,6 @@ const Profile = function () {
         <Likes />
         <br />
       </aside>
-
     </Container>
   );
 };

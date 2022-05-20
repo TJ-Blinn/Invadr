@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Stack, ImageListItem, ImageListItemBar, Typography } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 import { lightGreen } from '@mui/material/colors';
 
 export default function FilterBanner(props) {
@@ -54,12 +54,11 @@ export default function FilterBanner(props) {
     },
     typography: {
       fontFamily: 'Bungee',
-
-
       body1: {
         fontFamily: "Helvetica",
      }
-    }
+    },
+
   })
 
 
@@ -80,7 +79,7 @@ export default function FilterBanner(props) {
         </Typography>
         <Typography
       variant="h5"
-      color="secondary"
+      color="primary"
       align="center"
       sx={{
         p: 1
@@ -88,9 +87,14 @@ export default function FilterBanner(props) {
       >
       Pick A Genre:
         </Typography>
+      <Box align="center"
+      sx={{
+        p: 3
+      }}>
         <select id="select-genre" name="genre" onChange={handleGenreSearch}>
           {genresMapped}
         </select>
+        </Box>
       </div> : <h1>Loading</h1>}
 
       </ThemeProvider>
