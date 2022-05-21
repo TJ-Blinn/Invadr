@@ -71,7 +71,6 @@ export default function FilterBanner(props) {
       color="secondary"
       align="center"
       sx={{
-        // lineHeight: 1.5,
         p: 3
       }}
       >
