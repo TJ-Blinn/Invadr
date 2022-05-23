@@ -1,4 +1,5 @@
 import React from "react";
+import Ivadr from "../files/ivadr.png";
 import { Link } from "@mui/material";
 import { AppBar } from "@mui/material";
 import Toolbar from "@mui/material/Toolbar";
@@ -66,7 +67,8 @@ export default function Navigation() {
 
   return (
     <AppBar position="sticky" color="default">
-      <Container maxWidth="md">
+      <Container>
+        <img src={Ivadr} alt="Ivadr logo" width="100" height="100" />
         <Toolbar disableGutters>
           <Hidden smDown>
             {navigationLinks.map((item) => (
