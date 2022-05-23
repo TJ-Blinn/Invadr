@@ -18,7 +18,6 @@ import ListItemText from "@mui/material/ListItemText";
 import HomeIcon from "@mui/icons-material/Home";
 import LoginIcon from "@mui/icons-material/Login";
 import InfoIcon from "@mui/icons-material/Info";
-import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
 
 const navigationLinks = [
   { name: "Homepage", href: "/" },
@@ -41,12 +40,7 @@ export default function Navigation() {
   const [drawer, setDrawer] = React.useState(false);
 
   // Add icon components in this array when more pages are added
-  const icons = [
-    <HomeIcon />,
-    <LoginIcon />,
-    <InfoIcon />,
-    <AppRegistrationIcon />,
-  ];
+  const icons = [<HomeIcon />, <LoginIcon />, <InfoIcon />];
 
   const list = (anchor) => (
     <Box
