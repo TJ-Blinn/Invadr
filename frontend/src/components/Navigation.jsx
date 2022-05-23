@@ -22,8 +22,7 @@ import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
 
 const navigationLinks = [
   { name: "Homepage", href: "/" },
-  { name: "Login", href: "/login" },
-  { name: "Register", href: "/register" },
+  { name: "Profile", href: "/profile" },
   { name: "About", href: "/about" },
 ];
 
@@ -91,7 +90,7 @@ export default function Navigation() {
           </Hidden>
           {/* Hamburger menu and pop out drawer */}
           <Hidden smUp>
-            <IconButton onClick={() => setDrawer(true)} >
+            <IconButton onClick={() => setDrawer(true)}>
               <MenuIcon />
               <Drawer
                 anchor={"right"}
