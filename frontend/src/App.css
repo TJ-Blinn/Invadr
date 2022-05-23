@@ -66,7 +66,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color: red;
+  /* background-color: red; */
   align-items: center;
 }
 
@@ -97,7 +97,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: purple;
+  /* background-color: purple; */
   margin: 5%;
 }
 .game-title {
@@ -118,16 +118,37 @@
   width: 37%;
 }
 
-.card-1 {
-  background-color: yellow;
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee&family=Koulen&family=Oswald:wght@200;500;600;700&family=Rubik:wght@500;600;700;800&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&family=Ubuntu:wght@500&display=swap');
+
+/* .card-1 {
+  background-color: black;
+} */
+/* Transparency styling for each card of the Homepage */
+.css-10nhwq6-MuiImageListItem-root {
+  background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(16, 246, 4, 0.97);
 }
 
 .card-2 {
-  color: tomato;
+  /* color: tomato; */
 }
 
 .card-3 {
-  background-color: black;
+  /* background-color: black; */
+}
+/* Transparency styling for each card of the Result component */
+.css-1fvmzl6-MuiImageListItem-root {
+  background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(16, 246, 4, 0.97);
 }
 
 /* --------------------- */
@@ -154,5 +175,31 @@
   padding: 5%;
   font-size: larger;
 }
+/* ---------- PROFILE LIKES IMAGES ----------- */
 
+.css-186gwnw-MuiImageListItemBar-titleWrap .css-hk6gwf-MuiImageListItemBar-subtitle {
+  white-space: normal;
+  color:antiquewhite;
+}
 
+.css-8m3eu1-MuiImageListItemBar-root {
+  color:antiquewhite;
+}
+
+#root {
+  background-image: url("./files/vector-jan-2021-45.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Transparency styling for each card of the liked games on the profile page */
+.css-1t7wq94-MuiImageListItem-root {
+ /* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(16, 246, 4, 0.97);
+}

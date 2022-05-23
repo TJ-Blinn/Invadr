@@ -4,14 +4,14 @@ import AccountBoxOutlinedIcon from "@mui/icons-material/AccountBoxOutlined";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Container } from "@mui/material";
-// import Navigation from "./Navigation";
+import Navigation from "./Navigation";
 
 // route for testing only, hard-coded and must be updated later
 const Profile = function () {
   const [userData, setUserData] = useState({});
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/user/1`)
+      .get(`http://localhost:3003/user/1`)
       // result is what is being returned by axios from the API
       .then((result) => {
         // console.log("===============", result.data);
@@ -26,6 +26,9 @@ const Profile = function () {
 
   return (
     <Container>
+      <div>
+        <Navigation />
+      </div>
       <aside>
         <div>
           <AccountBoxOutlinedIcon sx={{ fontSize: 60 }} />
