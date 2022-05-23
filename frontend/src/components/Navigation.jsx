@@ -1,4 +1,5 @@
 import React from "react";
+import Ivadr from "../files/ivadr.png";
 import { Link } from "@mui/material";
 import { AppBar } from "@mui/material";
 import Toolbar from "@mui/material/Toolbar";
@@ -18,12 +19,10 @@ import ListItemText from "@mui/material/ListItemText";
 import HomeIcon from "@mui/icons-material/Home";
 import LoginIcon from "@mui/icons-material/Login";
 import InfoIcon from "@mui/icons-material/Info";
-import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
 
 const navigationLinks = [
   { name: "Homepage", href: "/" },
-  { name: "Login", href: "/login" },
-  { name: "Register", href: "/register" },
+  { name: "Profile", href: "/profile" },
   { name: "About", href: "/about" },
 ];
 
@@ -42,12 +41,7 @@ export default function Navigation() {
   const [drawer, setDrawer] = React.useState(false);
 
   // Add icon components in this array when more pages are added
-  const icons = [
-    <HomeIcon />,
-    <LoginIcon />,
-    <InfoIcon />,
-    <AppRegistrationIcon />,
-  ];
+  const icons = [<HomeIcon />, <LoginIcon />, <InfoIcon />];
 
   const list = (anchor) => (
     <Box
@@ -73,7 +67,8 @@ export default function Navigation() {
 
   return (
     <AppBar position="sticky" color="default">
-      <Container maxWidth="md">
+      <Container>
+        <img src={Ivadr} alt="Ivadr logo" width="100" height="100" />
         <Toolbar disableGutters>
           <Hidden smDown>
             {navigationLinks.map((item) => (
@@ -91,7 +86,7 @@ export default function Navigation() {
           </Hidden>
           {/* Hamburger menu and pop out drawer */}
           <Hidden smUp>
-            <IconButton onClick={() => setDrawer(true)} >
+            <IconButton onClick={() => setDrawer(true)}>
               <MenuIcon />
               <Drawer
                 anchor={"right"}
