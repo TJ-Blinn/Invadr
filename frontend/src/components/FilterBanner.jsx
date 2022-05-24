@@ -64,6 +64,7 @@ export default function FilterBanner(props) {
   return (
     <div>
       <ThemeProvider theme={theme}>
+
         {genres ? (
           <div class="banner">
             <Typography
@@ -105,6 +106,7 @@ export default function FilterBanner(props) {
         ) : (
           <h1>Loading</h1>
         )}
+
       </ThemeProvider>
     </div>
   );

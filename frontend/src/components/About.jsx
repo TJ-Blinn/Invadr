@@ -1,39 +1,59 @@
 import React from "react";
 import Navigation from "./Navigation";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Typography } from '@mui/material';
+import { lightGreen } from '@mui/material/colors';
+import "../App.css";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#ffebee',
+      contrastText: 'A400'
+    },
+    secondary: lightGreen
+  },
+  typography: {
+    fontFamily: 'Bungee',
+
+
+    body1: {
+      fontFamily: "Helvetica",
+   }
+  }
+})
 
 export default function About() {
   return (
     <div className="container">
       <Navigation />
-      <nav class="nav">
-        <img
-          class="hamburger"
-          alt="filter button"
-          src="https://previews.123rf.com/images/fokaspokas/fokaspokas1809/fokaspokas180900164/108564673-hamburger-menu-web-icon-white-icon-with-shadow-on-transparent-background.jpg"
-          width="100"
-          height="100"
-        />
-        <h1 class="page-name">INVADR</h1>
-        <img
-          class="sign-up"
-          alt="Sign Up"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ059ESnk10-TfyyVoKGpAz29cBnwTipRfW6w&usqp=CAU"
-          width="100"
-          height="100"
-        />
-      </nav>
+      <ThemeProvider theme={theme}>
+      <Typography
+      variant="h2"
+      color="secondary"
+      align="left"
+      sx={{
+        p: 2
+      }}
+      >
+        About Invadr
+      </Typography>
+      <Typography
+      color="primary"
+      align="left"
+      sx={{
+        fontFamily: "Bungee",
+        fontSize: 28,
+        p: 7,
+        gutterBottom: 'true'
+      }}
+      >
 
-      {/* -------- NAV is the same accross all pages -------- */}
+        At INVADR we LOVE Video Games! We're here to share with you and our community all the favorites from years past to the present day. Pick your genre of choice and let us introduce you to new FAVS, remind you of forgotten LOVED ones and let you HEART all the intriguing games you want to play in the FUTURE.
 
-      <div>
-        <h1 class="about">About</h1>
-        <p class="about-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam et
-          eum labore! Illo reprehenderit deleniti sed mollitia adipisci? Earum
-          quia nobis corrupti officiis atque nesciunt est alias commodi ex
-          similique.
-        </p>
-      </div>
+
+        </Typography>
+        </ThemeProvider>
     </div>
   );
 }
