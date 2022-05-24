@@ -82,10 +82,10 @@ export default function LikesMapped(props) {
             alt={result.name}
             loading="lazy"
           />
-          <button onClick={handleLike}>
+          <button onClick={handleLike} style={{ width: "8%" }}>
             <div>
               {liked ? (
-                <img style={{ height: "1em", width: "auto" }} src={FullHeart} />
+                <img style={{ height: "2em", width: "auto" }} src={FullHeart} />
               ) : (
                 <img src={EmptyHeart} />
               )}
