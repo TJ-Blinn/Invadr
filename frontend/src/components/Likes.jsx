@@ -41,7 +41,7 @@ export default function Likes() {
   useEffect(() => getAllLikes(), []);
 
   return (
-    <ImageList sx={{ maxHeight: "100%" }} cols={2} gap={10}>
+    <ImageList sx={{ maxHeight: "100%" }} cols={1} gap={10}>
       {likesList}
     </ImageList>
   );

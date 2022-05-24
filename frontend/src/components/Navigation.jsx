@@ -19,6 +19,7 @@ import ListItemText from "@mui/material/ListItemText";
 import HomeIcon from "@mui/icons-material/Home";
 import LoginIcon from "@mui/icons-material/Login";
 import InfoIcon from "@mui/icons-material/Info";
+import FaceOutlinedIcon from "@mui/icons-material/FaceOutlined";
 
 const navigationLinks = [
   { name: "Homepage", href: "/" },
@@ -67,8 +68,14 @@ export default function Navigation() {
 
   return (
     <AppBar position="sticky" color="default">
-      <Container>
-        <img src={Ivadr} alt="Ivadr logo" width="100" height="100" />
+      <Container sx={{ display: "flex", alignItems: "center" }}>
+        <img
+          src={Ivadr}
+          alt="Ivadr logo"
+          width="100"
+          height="100"
+          style={{ marginRight: "50px" }}
+        />
         <Toolbar disableGutters>
           <Hidden smDown>
             {navigationLinks.map((item) => (
@@ -98,6 +105,15 @@ export default function Navigation() {
             </IconButton>
           </Hidden>
         </Toolbar>
+        <Link
+          color="textPrimary"
+          variant="button"
+          underline="none"
+          href={"/login"}
+          style={{ position: "absolute", right: 0, marginRight: "34px" }}
+        >
+          <FaceOutlinedIcon sx={{ fontSize: 35 }} />
+        </Link>
       </Container>
     </AppBar>
   );
