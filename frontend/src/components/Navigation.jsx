@@ -106,7 +106,8 @@ export default function Navigation() {
               sx={{
                 // lineHeight: 1.5,
                 p: 1,
-                fontSize: 40
+                fontSize: 40,
+                textShadow: "3px 3px 3px #272d2dff"
               }}
             >
               INVADR
@@ -114,7 +115,11 @@ export default function Navigation() {
             </ThemeProvider>
         </div>
 
-        <Toolbar >
+        <Toolbar
+          sx={{
+            margin:"1%",
+            marginLeft: "33%"
+          }} >
           <Hidden smDown>
             {navigationLinks.map((item) => (
               <Link
