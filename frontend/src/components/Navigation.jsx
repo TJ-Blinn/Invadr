@@ -112,7 +112,7 @@ export default function Navigation() {
           href={"/login"}
           style={{ position: "absolute", right: 0, marginRight: "34px" }}
         >
-          <FaceOutlinedIcon />
+          <FaceOutlinedIcon sx={{ fontSize: 35 }} />
         </Link>
       </Container>
     </AppBar>
