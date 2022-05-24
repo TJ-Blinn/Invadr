@@ -164,17 +164,19 @@ border: 1px solid rgba(16, 246, 4, 0.97);
 /* --------------------- */
 
 .about {
-  display: flex;
-  background-color: cornflowerblue;
-  padding: 5%;
-  font-size: xxx-large;
+   background-image: url("./files/vector-jan-2021-45.png");
+  background-repeat: repeat;
+  background-position: center;
+  height: 100%
 }
 
-.about-text {
+/* .about-text {
   display: flex;
   padding: 5%;
-  /* font-size: larger; */
-}
+
+  font-size: larger;
+} */
+
 /* ---------- PROFILE LIKES IMAGES ----------- */
 
 .css-186gwnw-MuiImageListItemBar-titleWrap .css-hk6gwf-MuiImageListItemBar-subtitle {
@@ -188,9 +190,17 @@ border: 1px solid rgba(16, 246, 4, 0.97);
 
 #root {
   background-image: url("./files/vector-jan-2021-45.png");
-  background-repeat: no-repeat;
+  background-repeat: repeat-x;
   background-position: center;
   background-size: cover;
+  height: 100%
+}
+/* Result.jsx Game Card title styling */
+.MuiImageListItemBar-title {
+  color: rgb(157, 155, 155);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 50%;
+
 }
 
 /* Transparency styling for each card of the liked games on the profile page */

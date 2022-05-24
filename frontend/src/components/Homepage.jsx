@@ -2,11 +2,11 @@ import React from "react";
 import Navigation from "./Navigation";
 import FilterBanner from "./FilterBanner";
 import "../App.css";
-import { Stack, ImageList, ImageListItem, ImageListItemBar, Typography } from '@mui/material';
+import { ImageList, ImageListItem, Typography } from '@mui/material';
 import { shadows, borders } from "@mui/system";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { lightGreen } from '@mui/material/colors';
-import { dark } from "@mui/material/styles/createPalette";
+
 
 const color = lightGreen['A400'];
 
@@ -42,7 +42,6 @@ export default function Homepage() {
       color="#9e9e9e"
       align="center"
       sx={{
-        // lineHeight: 1.5,
         p: 2
       }}
       >
