@@ -3,6 +3,8 @@ import axios from "axios";
 import { ImageListItem, ImageListItemBar } from "@mui/material";
 import { shadows, borders } from "@mui/system";
 import "../App.css";
+import FullHeart from "../files/fullheart.png";
+import EmptyHeart from "../files/emptyheart.png";
 
 // This is the child component for Likes
 // on LikesMapped.jsx, we can accessing the like game id through props.gameId, then we make an api call to RAWG to
@@ -11,7 +13,7 @@ import "../App.css";
 
 export default function LikesMapped(props) {
   const [result, setResult] = useState([]);
-  const gameId = props.gameId;
+  const { gameId, getAllLikes } = props;
   const liked = true;
   const gameURL = `https://api.rawg.io/api/games/${gameId}?key=4d6e63aaf07b45ada62f971b8736e525`;
 
@@ -23,7 +25,7 @@ export default function LikesMapped(props) {
   }, [gameURL]);
   // Result is the payload from RAWG
 
-  const onClick = () => {
+  const handleLike = () => {
     axios
       .post("http://localhost:3003/test", {
         isLiked: !liked,
@@ -31,6 +33,7 @@ export default function LikesMapped(props) {
       })
       .then((response) => {
         console.log(response);
+        getAllLikes();
       })
       .catch((err) => {
         console.log(err);
@@ -79,13 +82,15 @@ export default function LikesMapped(props) {
             alt={result.name}
             loading="lazy"
           />
-          <button
-            onClick={onClick}>
-                <div>{liked ?
-                  <img style={{ height: "1em", width: "auto"}} src={require("../files/fullheart.png")} />
-                  :
-                  <img src={require("../files/emptyheart.png")} /> }</div>
-                </button>
+          <button onClick={handleLike}>
+            <div>
+              {liked ? (
+                <img style={{ height: "1em", width: "auto" }} src={FullHeart} />
+              ) : (
+                <img src={EmptyHeart} />
+              )}
+            </div>
+          </button>
           <ImageListItemBar
             // style={{ width: 250, height: 250 }}
             title={result.name}
