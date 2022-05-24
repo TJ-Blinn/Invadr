@@ -1,16 +1,18 @@
 import React from "react";
 
-import { Box, TextField, Stack, Button } from "@mui/material";
+import { Box, TextField, Stack, Button, Container } from "@mui/material";
 
 export default function Login() {
   return (
-    <div className="container">
-      <nav class="nav">
-        <img class="hamburger" alt="filter button" />
+    <Container
+      className="login-container"
+      maxWidth="lg"
+      sx={{ height: "100vh" }}
+    >
+      <nav class="login-nav">
         <h1 class="page-name">INVADR</h1>
-        <img class="sign-up" alt="Sign Up" />
       </nav>
-      {/* -------- NAV is the same accross all pages -------- */}
+      {/* -------- no NAV display on Login page -------- */}
 
       <div className="body-title">
         <p>Login In</p>
@@ -20,7 +22,7 @@ export default function Login() {
       <Box
         component="form"
         sx={{
-          "& > :not(style)": { m: 1, width: "75%", margin: "auto" },
+          "& > :not(style)": { m: 1, width: "50%", margin: "auto" },
         }}
         autoComplete="off"
       >
@@ -39,6 +41,6 @@ export default function Login() {
           </Button>
         </Stack>
       </Box>
-    </div>
+    </Container>
   );
 }
