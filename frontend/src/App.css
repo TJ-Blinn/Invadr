@@ -37,6 +37,10 @@
   }
 } */
 
+/* * {
+  font-size: 62.5%;
+} */
+
 .nav {
   background-color: lime;
   display: flex;
@@ -205,5 +209,14 @@ backdrop-filter: blur(5px);
 border: 1px solid rgba(16, 246, 4, 0.97);
 }
 
-/* ---------- NAVIGATION LINKS STYLING ----------- */
+/* ---------- login page (Needs work) ----------- */
 
+.login-container {
+  background-image: url("./files/vecteezy_retro_nl0221.png");
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-repeat: inherit;
+  z-index: 10;
+}
