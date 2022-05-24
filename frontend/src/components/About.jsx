@@ -3,6 +3,7 @@ import Navigation from "./Navigation";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Typography } from '@mui/material';
 import { lightGreen } from '@mui/material/colors';
+import "../App.css";
 
 const theme = createTheme({
   palette: {
@@ -24,7 +25,7 @@ const theme = createTheme({
 
 export default function About() {
   return (
-    <div>
+    <div className="container">
       <Navigation />
       <ThemeProvider theme={theme}>
       <Typography
@@ -42,11 +43,14 @@ export default function About() {
       align="left"
       sx={{
         fontFamily: "Bungee",
-        fontSize: 28
+        fontSize: 28,
+        p: 7,
+        gutterBottom: 'true'
       }}
       >
 
-          At INVADR we LOVE Video Games! We're here to share with you with and our community all the favorites from years past tothe present day. Pick your genre of choice and let us introduce you to new FAVS, remind you of forgotten LOVED ones and let you HEART all the intriguing games you want to play in the FUTURE.
+        At INVADR we LOVE Video Games! We're here to share with you and our community all the favorites from years past to the present day. Pick your genre of choice and let us introduce you to new FAVS, remind you of forgotten LOVED ones and let you HEART all the intriguing games you want to play in the FUTURE.
+
 
         </Typography>
         </ThemeProvider>
