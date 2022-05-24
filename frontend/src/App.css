@@ -93,6 +93,14 @@
   padding: 2%;
 }
 
+.brandCorner {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  float: left;
+  padding-right: -10%;
+}
+
 .game-container {
   display: flex;
   justify-content: space-around;
@@ -231,3 +239,4 @@ border: 1px solid rgba(16, 246, 4, 0.97);
   background-repeat: inherit;
   z-index: 10;
 }
+

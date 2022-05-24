@@ -20,7 +20,9 @@ import HomeIcon from "@mui/icons-material/Home";
 import LoginIcon from "@mui/icons-material/Login";
 import InfoIcon from "@mui/icons-material/Info";
 import FaceOutlinedIcon from "@mui/icons-material/FaceOutlined";
-
+import {Typography} from '@mui/material';
+import { lightGreen } from '@mui/material/colors';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 const navigationLinks = [
   { name: "Homepage", href: "/" },
   { name: "Profile", href: "/profile" },
@@ -30,6 +32,25 @@ const navigationLinks = [
 export default function Navigation() {
   let navigate = useNavigate();
 
+  const color = lightGreen['A400'];
+
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#ffebee',
+        contrastText: 'A400'
+      },
+      secondary: lightGreen
+    },
+    typography: {
+      fontFamily: 'Bungee',
+
+
+      body1: {
+        fontFamily: "Helvetica",
+     }
+    }
+  })
   // Adds space between the links on the nav pullout
   const navStyles = {
     marginRight: 20,
@@ -69,14 +90,31 @@ export default function Navigation() {
   return (
     <AppBar position="sticky" color="default">
       <Container sx={{ display: "flex", alignItems: "center" }}>
-        <img
-          src={Ivadr}
-          alt="Ivadr logo"
-          width="100"
-          height="100"
-          style={{ marginRight: "50px" }}
-        />
-        <Toolbar disableGutters>
+
+        <div className="brandCorner">
+          <img
+            src={Ivadr}
+            alt="Ivadr logo"
+            width="100"
+            height="100"
+          />
+          <ThemeProvider theme={theme}>
+          <Typography
+              variant="h1"
+              color="secondary"
+              align="center"
+              sx={{
+                // lineHeight: 1.5,
+                p: 1,
+                fontSize: 40
+              }}
+            >
+              INVADR
+            </Typography>
+            </ThemeProvider>
+        </div>
+
+        <Toolbar >
           <Hidden smDown>
             {navigationLinks.map((item) => (
               <Link
