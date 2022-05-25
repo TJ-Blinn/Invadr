@@ -39,7 +39,7 @@ export default function About() {
         </Typography>
         <Typography
           color="primary"
-          align="left"
+          align="center"
           sx={{
             fontFamily: "Bungee",
             fontSize: 28,
