@@ -6,6 +6,8 @@ import { Stack, ImageListItem, ImageListItemBar, Typography } from "@mui/materia
 import "../App.css";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { lightGreen } from '@mui/material/colors';
+import FullHeart from "../files/fullheart.png";
+import EmptyHeart from "../files/emptyheart.png";
 
 export default function Result(props) {
   const [result, setResult] = useState([]);
@@ -62,13 +64,14 @@ export default function Result(props) {
         <Stack alignItems="center" spacing={2}
         >
         <ImageListItem
-        sx={{
-          width: 500,
-          height: 500,
-          boxShadow: 4,
-          borderRadius: 8,
-          p: 2,
-          m: 2,
+          sx={{
+            width: "50%",
+            height: 500,
+            boxShadow: 4,
+            borderRadius: 8,
+            border:"solid lightGreen",
+            p: 2,
+            m: 2
         }}
       >
         <img
@@ -79,7 +82,7 @@ export default function Result(props) {
             loading="lazy"
           />
           <ImageListItemBar
-            // style={{ width: 250, height: 250 }}
+
             title={result.name}
             subtitle={result.description_raw}
             position="below"
@@ -100,11 +103,15 @@ export default function Result(props) {
           <p className="game-description">{result.description_raw}</p> */}
 
 
-          <button onClick={onClick}>{liked ?
-                  <img style={{ height: "1em", width: "auto"}} src={require("../files/fullheart.png")} />
-                  :
-                  <img style={{ height: "1em", width: "auto"}} src={require("../files/emptyheart.png")} />
-                  }</button>
+          <button onClick={onClick} style={{ width: "8%",textAlign: "center", backgroundColor: "transparent", border:"none", paddingTop: "2%"}}>
+                  <div>
+                  {liked ? (
+                    <img style={{ height: "2em", width: "auto" }} src={FullHeart} />
+                  ) : (
+                    <img style={{ height: "2em", width: "auto" }} src={EmptyHeart} />
+                  )}
+                </div>
+                  </button>
 
           <h3>Metacritic score: {result.metacritic}</h3>
         </article>

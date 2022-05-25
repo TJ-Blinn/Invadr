@@ -30,7 +30,7 @@ export default function About() {
         <Typography
           variant="h2"
           color="secondary"
-          align="left"
+          align="center"
           sx={{
             p: 2,
           }}
@@ -39,7 +39,7 @@ export default function About() {
         </Typography>
         <Typography
           color="primary"
-          align="left"
+          align="center"
           sx={{
             fontFamily: "Bungee",
             fontSize: 28,
