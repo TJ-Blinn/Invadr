@@ -146,6 +146,14 @@ backdrop-filter: blur(5px);
 border: 1px solid rgba(16, 246, 4, 0.97);
 }
 
+/* Homepage Image styling */
+.game-image {
+  width: 20rem;
+  height: 13.33rem;
+}
+
+
+
 .card-2 {
   /* color: tomato; */
 }
