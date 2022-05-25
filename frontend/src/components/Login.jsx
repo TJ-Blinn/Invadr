@@ -21,7 +21,7 @@ export default function Login() {
       {/* -------- no NAV display on Login page -------- */}
 
       <div className="body-title">
-        <p>Login In</p>
+        <p>Login</p>
         <br />
       </div>
 
