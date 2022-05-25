@@ -194,6 +194,7 @@ border: 1px solid rgba(16, 246, 4, 0.97);
 .css-186gwnw-MuiImageListItemBar-titleWrap .css-hk6gwf-MuiImageListItemBar-subtitle {
   white-space: normal;
   color:antiquewhite;
+  font-size: larger;
 }
 
 .css-8m3eu1-MuiImageListItemBar-root {
@@ -212,7 +213,7 @@ border: 1px solid rgba(16, 246, 4, 0.97);
 .MuiImageListItemBar-title {
   color: rgb(157, 155, 155);
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 50%;
+  font-size: 50;
 
 
 }
@@ -226,6 +227,10 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
 border: 1px solid rgba(16, 246, 4, 0.97);
+}
+
+.profileGames {
+  display: flex;
 }
 
 /* ---------- login page (Needs work) ----------- */
