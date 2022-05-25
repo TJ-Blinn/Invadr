@@ -177,9 +177,9 @@ border: 1px solid rgba(16, 246, 4, 0.97);
 
 .about {
    background-image: url("./files/vector-jan-2021-45.png");
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-position: center;
-  height: 100%
+  height: 100vh;
 }
 
 /* .about-text {
@@ -230,6 +230,31 @@ border: 1px solid rgba(16, 246, 4, 0.97);
 
 /* ---------- login page (Needs work) ----------- */
 
+.title-page-gradient {
+  margin: 0;
+  font-size: 20px;
+  font-family: 'Press Start 2P', cursive;
+  text-shadow:rgba(95, 94, 94, 0.25);
+  line-height: 1;
+  text-transform: capitalize;
+  font-size: 130px;
+  text-align: center;
+  background: linear-gradient(to right top, red, yellow, blue);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate 10s linear infinite;
+}
+
+@keyframes animate{
+  20%{
+    filter: hue-rotate(0deg)
+  }
+  100%{
+    filter: hue-rotate(360deg)
+  }
+}
+
 .login-container {
   background-image: url("./files/vecteezy_retro_nl0221.png");
   background-position: center;
@@ -238,5 +263,19 @@ border: 1px solid rgba(16, 246, 4, 0.97);
   width: 100%;
   background-repeat: inherit;
   z-index: 10;
+  padding: 100px;
+  /* display: flex */
+  /* justify-content: center; */
+  /* align-item: center; */
+}
+/* adding opacity to Login background image */
+.login-container::before{
+  content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(95, 94, 94, 0.25);
 }
 

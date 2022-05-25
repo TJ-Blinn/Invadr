@@ -1,21 +1,27 @@
 import React from "react";
-
+import "../App.css";
 import { Box, TextField, Stack, Button, Container } from "@mui/material";
+
+const styles = {
+  "&#outlined-basic-root": {
+    border: "10px black solid",
+  },
+};
 
 export default function Login() {
   return (
     <Container
       className="login-container"
-      maxWidth="lg"
+      maxWidth="master"
       sx={{ height: "100vh" }}
     >
       <nav class="login-nav">
-        <h1 class="page-name">INVADR</h1>
+        <h1 class="title-page-gradient">INVADR</h1>
       </nav>
       {/* -------- no NAV display on Login page -------- */}
 
       <div className="body-title">
-        <p>Login In</p>
+        <p>Login</p>
         <br />
       </div>
 
@@ -27,7 +33,7 @@ export default function Login() {
         autoComplete="off"
       >
         <Stack spacing={2}>
-          <TextField required type="email" label="Email" />
+          <TextField sx={styles} required type="email" label="Email" />
           <TextField required type="password" label="Password" />
         </Stack>
         <br />
@@ -36,7 +42,16 @@ export default function Login() {
             Login
           </Button>
 
-          <Button size="large" variant="outlined" color="error" type="reset">
+          <Button
+            sx={{
+              color: "white",
+              backgroundColor: "#2F1B5B",
+              borderColor: "#2F1B5B",
+            }}
+            size="large"
+            variant="outlined"
+            type="reset"
+          >
             Reset
           </Button>
         </Stack>
