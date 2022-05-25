@@ -74,6 +74,7 @@ export default function FilterBanner(props) {
               sx={{
                 marginTop: "5%",
                 p: 3,
+                textShadow: "2px 2px 2px white"
               }}
             >
               INVADR
