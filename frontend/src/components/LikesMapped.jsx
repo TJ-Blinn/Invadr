@@ -72,12 +72,12 @@ export default function LikesMapped(props) {
             height: 500,
             boxShadow: 4,
             borderRadius: 8,
-            border:"solid #595b5cff",
+            border:"solid lightGreen",
             p: 2,
             m: 2,
             marginLeft:"12%",
             display:"flex",
-            alignItems:"center"
+            alignItems:"center",
           }}
         >
           <img
