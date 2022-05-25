@@ -68,14 +68,14 @@ export default function LikesMapped(props) {
       {result ? (
         <ImageListItem
           sx={{
-            width: "75%",
+            width: "60%",
             height: 500,
             boxShadow: 4,
             borderRadius: 8,
             border:"solid lightGreen",
             p: 2,
             m: 2,
-            marginLeft:"12%",
+            marginLeft:"20%",
             display:"flex",
             alignItems:"center",
           }}
