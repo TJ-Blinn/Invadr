@@ -89,6 +89,7 @@ SELECT * FROM users WHERE id = $1;
   });
   // res.send("user" + req.params.id);
 });
+
 // --------------------------------------      LOGIN
 app.post("/login", (req, res) => {
   const email = req.body.email;
@@ -102,8 +103,32 @@ app.post("/login", (req, res) => {
   )
     .then(({ rows }) => {
       res.status(200).json(rows[0]);
+      console.log("EMPTY ARRAY ++++++++++++", rows[0]);
     })
-    .catch();
+    .catch((error) => {
+      console.log("catch error ------------", error);
+    });
+
+  if (results.rows.length > 0) {
+    return res.render("/", {
+      message: "Email already registered",
+    });
+  } else {
+    db.query(
+      `INSERT INTO users (email, password)
+        VALUES ($1, $2)
+        RETURNING id, password`,
+      [email, password]
+    )
+      .then(() => {
+        res.status(200).json();
+        res.redirect("/");
+      })
+      .catch((error) => {
+        console.log(error);
+        res.status(400).json(error);
+      });
+  }
 });
 // HANDLE where there is nothing returned
 // determine if that means rows.length = 0 (an empty array) OR, if that hits our .catch as an error
