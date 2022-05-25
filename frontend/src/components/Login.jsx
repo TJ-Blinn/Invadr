@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../App.css";
 import { Box, TextField, Stack, Button, Container } from "@mui/material";
 
 const styles = {
@@ -16,7 +16,7 @@ export default function Login() {
       sx={{ height: "100vh" }}
     >
       <nav class="login-nav">
-        <h1 class="page-name">INVADR</h1>
+        <h1 class="title-page-gradient">INVADR</h1>
       </nav>
       {/* -------- no NAV display on Login page -------- */}
 
