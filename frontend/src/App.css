@@ -179,7 +179,10 @@ border: 1px solid rgba(16, 246, 4, 0.97);
    background-image: url("./files/vector-jan-2021-45.png");
   background-repeat: no-repeat;
   background-position: center;
-  height: 100vh;
+
+  height: 100%;
+  width: 100%;
+
 }
 
 /* .about-text {
@@ -203,12 +206,12 @@ border: 1px solid rgba(16, 246, 4, 0.97);
 
 #root {
   background-image: url("./files/vector-jan-2021-45.png");
-
   /* background-repeat: no-repeat; */
   background-position: center;
   background-size: contain;
   height: 100%;
 }
+
 /* Result.jsx Game Card title styling */
 .MuiImageListItemBar-title {
   color: rgb(157, 155, 155);

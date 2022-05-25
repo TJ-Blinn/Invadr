@@ -90,6 +90,61 @@ SELECT * FROM users WHERE id = $1;
   // res.send("user" + req.params.id);
 });
 
+// --------------------------------------      LOGIN
+app.post("/login", (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
+
+  db.query(
+    `
+  SELECT * FROM users WHERE email = $1;
+  `,
+    [email]
+  )
+    .then(({ rows }) => {
+      if (rows.length == 0) {
+        return res.status(400).send({ status: 0, message: "Email not found" });
+      }
+
+      const user = rows[0];
+      if (user.password !== password) {
+        return res
+          .status(400)
+          .send({ status: 0, message: "Password is not valid" });
+      }
+
+      return res
+        .status(200)
+        .send({
+          status: 1,
+          message: `Login successful for ${user.name}`,
+          user,
+        });
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(400).json(error);
+    });
+
+  //   db.query(`SELECT * FROM users WHERE email AND password = $1, $2;`, [
+  //     email,
+  //     password,
+  //   ])
+  //     .then((res) => {
+  //       res.status(200).json();
+  //       console.log("===================", res);
+  //       res.redirect("/");
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //       res.status(400).json(error);
+  //     });
+});
+
+// HANDLE where there is nothing returned
+// determine if that means rows.length = 0 (an empty array) OR, if that hits our .catch as an error
+// only send status 404 for Not Found or 400 Bad Request if email/password incorrect
+
 // --------------------------------------
 app.get("/likes", (req, res) => {
   // const userId = req.params.id;
