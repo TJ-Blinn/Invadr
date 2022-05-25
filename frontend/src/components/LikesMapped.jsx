@@ -74,7 +74,9 @@ export default function LikesMapped(props) {
             borderRadius: 8,
             p: 2,
             m: 2,
-            marginLeft:"12%"
+            marginLeft:"12%",
+            display:"flex",
+            alignItems:"center"
           }}
         >
           <img
@@ -84,10 +86,10 @@ export default function LikesMapped(props) {
             alt={result.name}
             loading="lazy"
           />
-          <button onClick={handleLike} style={{ width: "8%" }}>
-            <div>
+          <button onClick={handleLike} style={{  backgroundColor: "", borderRadius:"66%", marginTop:"2%"}}>
+            <div style={{ width: "5%", height:"8%"}} >
               {liked ? (
-                <img style={{ height: "2em", width: "auto" }} src={FullHeart} />
+                <img style={{ height: "2em", width: "auto", paddingTop:"100%" }} src={FullHeart} />
               ) : (
                 <img src={EmptyHeart} />
               )}
