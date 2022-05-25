@@ -153,6 +153,7 @@ border: 1px solid rgba(16, 246, 4, 0.97);
 .card-3 {
   /* background-color: black; */
 }
+
 /* Transparency styling for each card of the Result component */
 .css-1fvmzl6-MuiImageListItem-root {
   background: rgba(255, 255, 255, 0.2);
