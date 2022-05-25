@@ -6,7 +6,7 @@ export default function Login() {
   return (
     <Container
       className="login-container"
-      maxWidth="lg"
+      maxWidth="master"
       sx={{ height: "100vh" }}
     >
       <nav class="login-nav">
