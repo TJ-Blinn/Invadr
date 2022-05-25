@@ -26,7 +26,6 @@ export default function Login() {
       })
       .then((response) => {
         console.log(response);
-
         // This useNavigate will Programmatically navigate back to home using React router
         navigate("/");
       })
