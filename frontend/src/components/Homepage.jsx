@@ -65,8 +65,10 @@ export default function Homepage() {
 
           <img
             class="game-image"
-            src="https://media.rawg.io/media/games/942/9424d6bb763dc38d9378b488603c87fa.jpg"
             alt="game image"
+            src="https://media.rawg.io/media/games/942/9424d6bb763dc38d9378b488603c87fa.jpg?w=240&fit=crop&auto=format"
+            srcSet="https://media.rawg.io/media/games/942/9424d6bb763dc38d9378b488603c87fa.jpg?w=240&fit=crop&auto=format&dpr=2 2x"
+
           />
             <Typography
       variant="h3"
