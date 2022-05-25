@@ -41,7 +41,13 @@ export default function Likes() {
   useEffect(() => getAllLikes(), []);
 
   return (
-    <ImageList sx={{ maxHeight: "100%" }} cols={1} gap={10}>
+    <ImageList sx={{
+      maxHeight: "100%",
+      display:"flex",
+      flexDirection:"column",
+      justifyContent:"center",
+      alignItems:"center"
+    }} cols={1} gap={10}>
       {likesList}
     </ImageList>
   );
