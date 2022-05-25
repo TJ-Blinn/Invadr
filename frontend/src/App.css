@@ -152,6 +152,14 @@ border: 1px solid rgba(16, 246, 4, 0.97);
   height: 13.33rem;
 }
 
+select {
+  width: 12rem;
+  height: 2rem;
+  font-size: large;
+  border-radius: .25rem;
+  font-family: "Bungee";
+  padding-left: 25%;
+}
 
 
 .card-2 {
