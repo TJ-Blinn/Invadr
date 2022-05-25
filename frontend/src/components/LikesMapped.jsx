@@ -72,6 +72,7 @@ export default function LikesMapped(props) {
             height: 500,
             boxShadow: 4,
             borderRadius: 8,
+            border:"solid #595b5cff",
             p: 2,
             m: 2,
             marginLeft:"12%",

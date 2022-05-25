@@ -194,6 +194,7 @@ border: 1px solid rgba(16, 246, 4, 0.97);
 .css-186gwnw-MuiImageListItemBar-titleWrap .css-hk6gwf-MuiImageListItemBar-subtitle {
   white-space: normal;
   color:antiquewhite;
+  font-size: large;
 }
 
 .css-8m3eu1-MuiImageListItemBar-root {
@@ -212,7 +213,7 @@ border: 1px solid rgba(16, 246, 4, 0.97);
 .MuiImageListItemBar-title {
   color: rgb(157, 155, 155);
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 50%;
+  font-size: 50;
 
 
 }
