@@ -5,6 +5,7 @@ import { shadows, borders } from "@mui/system";
 import "../App.css";
 import FullHeart from "../files/fullheart.png";
 import EmptyHeart from "../files/emptyheart.png";
+import { ForkLeft } from "@mui/icons-material";
 
 // This is the child component for Likes
 // on LikesMapped.jsx, we can accessing the like game id through props.gameId, then we make an api call to RAWG to
@@ -67,12 +68,16 @@ export default function LikesMapped(props) {
       {result ? (
         <ImageListItem
           sx={{
-            width: 500,
+            width: "75%",
             height: 500,
             boxShadow: 4,
             borderRadius: 8,
+            border:"solid lightGreen",
             p: 2,
             m: 2,
+            marginLeft:"12%",
+            display:"flex",
+            alignItems:"center",
           }}
         >
           <img
@@ -82,7 +87,7 @@ export default function LikesMapped(props) {
             alt={result.name}
             loading="lazy"
           />
-          <button onClick={handleLike} style={{ width: "8%" }}>
+          <button onClick={handleLike} style={{ width: "8%",textAlign: "center", backgroundColor: "transparent", border:"none", paddingTop: "2%"}}>
             <div>
               {liked ? (
                 <img style={{ height: "2em", width: "auto" }} src={FullHeart} />

@@ -1,8 +1,16 @@
 import React from "react";
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import { Box, TextField, Stack, Button, Container } from "@mui/material";
 import axios from "axios";
+
+const styles = {
+  "&#outlined-basic-root": {
+    border: "10px black solid",
+  },
+};
 
 export default function Login() {
   let navigate = useNavigate();
@@ -52,16 +60,18 @@ export default function Login() {
   return (
     <Container
       className="login-container"
+
       maxWidth="false"
       sx={{ height: "100vh", width: "100vw" }}
+
     >
       <nav class="login-nav">
-        <h1 class="page-name">INVADR</h1>
+        <h1 class="title-page-gradient">INVADR</h1>
       </nav>
       {/* -------- no NAV display on Login page -------- */}
 
       <div className="body-title">
-        <p>Login In</p>
+        <p>Login</p>
         <br />
       </div>
 
@@ -74,6 +84,7 @@ export default function Login() {
         onSubmit={handleSubmit}
       >
         <Stack spacing={2}>
+
           <TextField
             required
             type="email"
@@ -86,6 +97,7 @@ export default function Login() {
             label="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
+
         </Stack>
         <br />
         <Stack spacing={1} direction="column" alignItems="center">
@@ -93,7 +105,16 @@ export default function Login() {
             Login
           </Button>
 
-          <Button size="large" variant="outlined" color="error" type="reset">
+          <Button
+            sx={{
+              color: "white",
+              backgroundColor: "#2F1B5B",
+              borderColor: "#2F1B5B",
+            }}
+            size="large"
+            variant="outlined"
+            type="reset"
+          >
             Reset
           </Button>
         </Stack>

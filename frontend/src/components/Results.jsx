@@ -6,13 +6,9 @@ import Result from "./Result";
 import FilterBanner from "./FilterBanner";
 import { CompareSharp } from "@mui/icons-material";
 import { useLocation } from "react-router-dom";
-import "../App.css";
-import {
-  ImageList,
-  ImageListItem,
-  ImageListItemBar,
-  Stack,
-} from "@mui/material";
+
+
+
 
 export default function Results() {
   const [results, setResults] = useState([]);
@@ -42,6 +38,7 @@ export default function Results() {
     axios.get(url).then((response) => {
       console.log("123");
 
+
       setResults(response.data.results);
       // make a nested axios call to our own server, to get the games that are liked, and pass them as props to result.jsx, and then render the like button as liked or unliked.
       axios.get("http://localhost:3003/likes").then((likesResponse) => {
@@ -55,32 +52,36 @@ export default function Results() {
     });
   };
 
-  // Safeguards from infinite loop
-  useEffect(() => {
-    if (resultsURLParam.state !== null) {
-      const { genreValue } = resultsURLParam.state;
 
-      // Dynamically update the startingURL
-      startingURL = startingURL + `&genres=${genreValue}`;
-      // Calls searchGenre
-      searchGenre(startingURL);
-    } else {
-      searchGenre(startingURL);
-    }
-  }, [resultsURLParam]);
+// Safeguards from infinite loop
+useEffect(() => {
+
+  if (resultsURLParam.state !== null)  {
+    const {genreValue} = resultsURLParam.state
+
+    // Dynamically update the startingURL
+    startingURL = startingURL + `&genres=${genreValue}`
+    // Calls searchGenre
+    searchGenre(startingURL)
+
+  } else {
+    searchGenre(startingURL);
+  }
+}, [resultsURLParam]);
+
+
 
   // useEffect(() => {
 
   //   console.log("DEF");
 
   //   axios.get(URL).then((response) => {
-  //setResults(response.data.results);
+    //setResults(response.data.results);
   //     // make a nested axios call to our own server, to get the games that are liked, and pass them as props to result.jsx, and then render the like button as liked or unliked.
   //     axios.get("http://localhost:3003/likes").then((likesResponse) => {
   //       const likesArray = likesResponse.data;
   //       const gamesLiked = likesArray.map((game) => {
-  //         const gameID = game.game_id;
-  //         return gameID;liked
+  //         const gameID = game.game_ilikedGam
   //       });
   //       setLikedGames(gamesLiked);
   //     });
@@ -112,7 +113,7 @@ export default function Results() {
   return (
     <div>
       <Navigation />
-      <FilterBanner />
+      <FilterBanner  />
       {gameList}
     </div>
   );
