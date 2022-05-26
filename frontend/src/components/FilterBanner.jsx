@@ -85,6 +85,7 @@ export default function FilterBanner(props) {
               align="center"
               sx={{
                 p: 1,
+                fontSize: "xx-large"
               }}
             >
               Pick A Genre:
