@@ -52,3 +52,11 @@ PGPORT=5432
 - Node 10.x or above
 - NPM 5.x or above
 - PG 6.x
+
+## Animated Gradient
+
+- referenced CodeNewbies You Tube channel: https://youtu.be/tuI9SZnWkWU Animated Gradient Text | CSS Animation Examples
+
+## Transparency Styling on game cards
+
+- https://css.glass
