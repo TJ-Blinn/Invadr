@@ -305,3 +305,12 @@ border: 1px solid rgba(16, 246, 4, 0.97);
 }
 
 
+.invadr-link {
+  color: #39ff14ff;
+  text-shadow: 3px 3px 3px #272d2dff;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+
+
