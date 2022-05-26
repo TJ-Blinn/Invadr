@@ -32,15 +32,9 @@ const Profile = function () {
       <aside>
         <div>
           <AccountBoxOutlinedIcon sx={{ fontSize: 60 }} />
-          <div className="profile__name">
+          <div className="profile_name">
             <h2>
-              <span className="profile--bold">{userData.name}</span>
-            </h2>
-          </div>
-
-          <div>
-            <h2>
-              <span className="profile--bold">{userData.email}</span>
+              <span className="profile--bold">Greetings Invadr {userData.name}!</span>
             </h2>
           </div>
         </div>

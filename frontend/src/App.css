@@ -320,5 +320,16 @@ border: 1px solid rgba(16, 246, 4, 0.97);
   margin-top: 3rem;
 }
 
+/* profile name styling */
 
+.profile_name {
+  color: white;
+  position: relative;
+  left: 23.33%;
+  padding-top: 3rem;
+}
 
+.profile--bold {
+  font-size: xxx-large;
+  text-shadow: 3px 3px 3px #272d2dff;
+}

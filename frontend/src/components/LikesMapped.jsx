@@ -96,9 +96,8 @@ export default function LikesMapped(props) {
               )}
             </div>
           </button>
+          <h2 className="resultTitle" >{result.name}</h2>
           <ImageListItemBar
-            // style={{ width: 250, height: 250 }}
-            title={result.name}
             subtitle={result.description_raw}
             position="below"
             sx={{ margin: 1, fontWeight: "medium" }}
