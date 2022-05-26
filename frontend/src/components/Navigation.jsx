@@ -52,7 +52,7 @@ export default function Navigation() {
   });
   // Adds space between the links on the nav pullout
   const navStyles = {
-    marginRight: 20,
+    marginRight: 10,
   };
 
   // AppBar and Toolbar MUI components to contain active elements, also adds padding and spacing
@@ -89,7 +89,7 @@ export default function Navigation() {
   return (
     <AppBar position="sticky" color="default">
 
-      <Container sx={{ display: "flex", alignItems: "center", position: "fixed", top:"0%",left: "-3%", right: "-3%", backgroundColor: "#f5f5f5" }}>
+      <Container sx={{ display: "flex", alignItems: "center", justifyContent:"flex-end" , position: "fixed", top:"0%",left: "-3%", right: "-3%", backgroundColor: "#f5f5f5" }}>
 
 
         <div className="brandCorner">
