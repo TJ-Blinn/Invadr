@@ -81,9 +81,8 @@ export default function Result(props) {
             alt={result.name}
             loading="lazy"
           />
+          <h2 className="resultTitle" >{result.name}</h2>
           <ImageListItemBar
-
-            title={result.name}
             subtitle={result.description_raw}
             position="below"
             sx={{
