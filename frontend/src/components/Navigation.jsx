@@ -96,8 +96,8 @@ export default function Navigation() {
           justifyContent: "flex-end",
           position: "fixed",
           top: "0%",
-          left: "-3%",
-          right: "-3%",
+          left: "-15%",
+          right: "-15%",
           backgroundColor: "#f5f5f5",
         }}
       >
