@@ -3,6 +3,7 @@ import Navigation from "./Navigation";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Typography } from "@mui/material";
 import { lightGreen } from "@mui/material/colors";
+import invadr from "../files/ivadr.png"
 import "../App.css";
 
 const theme = createTheme({
@@ -33,6 +34,7 @@ export default function About() {
           align="center"
           sx={{
             p: 2,
+            marginTop:"10rem"
           }}
         >
           About Invadr
@@ -43,8 +45,9 @@ export default function About() {
           sx={{
             fontFamily: "Bungee",
             fontSize: 28,
-            p: 7,
+            p: 9,
             gutterBottom: "true",
+            textShadow: "1px 1px 1px lime"
           }}
         >
           At INVADR we LOVE Video Games! We're here to share with you and our
@@ -53,7 +56,11 @@ export default function About() {
           of forgotten LOVED ones and let you HEART all the intriguing games you
           want to play in the FUTURE.
         </Typography>
+
+
       </ThemeProvider>
+      <div className="logoDiv"><img className="aboutLogo" src={invadr} alt="logo" /></div>
+
     </div>
   );
 }

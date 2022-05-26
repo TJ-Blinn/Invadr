@@ -77,7 +77,8 @@ export default function Homepage() {
       sx={{
         fontFamily: "Rubik",
         fontWeight: 700,
-        p: 3
+        p: 3,
+        textShadow: "3px 3px 3px black"
       }}
       >
       Limbo
@@ -102,7 +103,7 @@ export default function Homepage() {
         fontWeight: 700,
         fontSize: 24,
         p: 10,
-        textShadow: "1px 1px 1px black"
+        textShadow: "3px 3px 3px black"
       }}
       >
             Metacritic Score:
@@ -137,7 +138,8 @@ export default function Homepage() {
         fontFamily: "Rubik",
         fontWeight: 700,
         p: 3,
-        width: "100%"
+        width: "100%",
+        textShadow: "3px 3px 3px black"
       }}
       >
       Darkest Dungeon
@@ -157,7 +159,7 @@ export default function Homepage() {
         fontWeight: 700,
         fontSize: 24,
         p: 3,
-        textShadow: "1px 1px 1px black"
+        textShadow: "3px 3px 3px black"
       }}
       >
             Metacritic Score:
@@ -192,7 +194,8 @@ export default function Homepage() {
       sx={{
         fontFamily: "Rubik",
         fontWeight: 700,
-        p: 3
+        p: 3,
+        textShadow: "3px 3px 3px black"
       }}
       >
       World of Goo
@@ -214,7 +217,7 @@ export default function Homepage() {
         fontWeight: 700,
         fontSize: 24,
         p: 7,
-        textShadow: "1px 1px 1px black"
+        textShadow: "3px 3px 3px black"
       }}
       >
             Metacritic Score:
@@ -248,7 +251,8 @@ export default function Homepage() {
       sx={{
         fontFamily: "Rubik",
         fontWeight: 700,
-        p: 3
+        p: 3,
+        textShadow: "3px 3px 3px black"
       }}
       >
       Braid
@@ -268,7 +272,7 @@ export default function Homepage() {
         fontWeight: 700,
         fontSize: 24,
         p: 3,
-        textShadow: "1px 1px 1px black"
+        textShadow: "3px 3px 3px black"
       }}
       >
             Metacritic Score:

@@ -197,7 +197,7 @@ border: 1px solid rgba(16, 246, 4, 0.97);
   background-repeat: no-repeat;
   background-position: center;
 
-  height: 100vh;
+  height: 100%;
   width: 100vw;
 
 }
@@ -332,4 +332,13 @@ border: 1px solid rgba(16, 246, 4, 0.97);
 .profile--bold {
   font-size: xxx-large;
   text-shadow: 3px 3px 3px #272d2dff;
+}
+
+.logoDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  margin-inline: 30%;
+  margin-block: -6.66%;
 }
