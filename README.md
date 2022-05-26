@@ -1,6 +1,4 @@
-
 # INVADR - A simple catalogue of games you love!
-
 
 ## Overview
 
@@ -22,23 +20,33 @@ PGDATABASE=reviewrdb
 PGPASSWORD=reviewr
 PGPORT=5432
 ```
-5. Log into psql with: 
+
+5. Log into psql with:
+
 ```
 psql -d reviewrdb -U reviewr
 ```
+
 6. Create the schema with the following command within psql:
+
 ```
 \i db/migrations/tables.sql;
 ```
+
 7. Seed the users with the following command:
+
 ```
 \i db/seeds/users.sql;
 ```
+
 8. To run the backend server, in a new terminal, from the project root directory, run the following command:
+
 ```
 npm start
 ```
+
 9. To run the frontend server, use the following commands sequentially:
+
 ```
 cd frontend
 npm start
@@ -73,20 +81,20 @@ npm start
 - Request 2.88.x
 - Nodemon 2.0.x
 - Webpack Dev Server 4.9.x
-<br>
-
+  <br>
 
 ## Documentation
 
-On loading the front end, you will see the main game page. To log in you can click the controller icon in the top right. For testing purposes, you can use the following information to log in:  
+On loading the front end, you will see the main game page. To log in you can click the controller icon in the top right. For testing purposes, you can use the following information to log in:
 
 ```
 email: mariokart@gmail.com
 password: asdf
 ```
+
 <br>
 
-[![01.png](https://i.postimg.cc/13vzjzf4/01.png)](https://postimg.cc/21Bmqrdf)  
+[![01.png](https://i.postimg.cc/13vzjzf4/01.png)](https://postimg.cc/21Bmqrdf)
 
 <br>
 
@@ -116,3 +124,13 @@ If the user no longer likes the game, they can unclick the like button to remove
 
 <br>
 
+# Credits:
+
+- Our application consumes RAWG API to display a list of popular video games images, provide descriptions, and sources Metacritic ratings [RAWG](https://rawg.io/ "RAWG API")
+
+- Invadr logo on Login page adapted from source code: Animated Gradient Text by: _CodeNewbies_: May 20, 2022:
+  [CodeNewbies](https://youtu.be/tuI9SZnWkWU "CodeNewbies")
+
+- Transparent cards (Glassmorphism) on Homepage adapted from source code: css.glass by _@miketromba_
+  May 19, 2022:
+  [css.glass](https://css.glass "@miketromba")
