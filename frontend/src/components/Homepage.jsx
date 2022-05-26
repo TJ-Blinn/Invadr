@@ -95,13 +95,14 @@ export default function Homepage() {
 
       <Typography
       variant="h3"
-      color="#0c0f0eff"
+      color="white"
       align="center"
       sx={{
         fontFamily: "Oswald",
         fontWeight: 700,
         fontSize: 24,
-        p: 10
+        p: 10,
+        textShadow: "1px 1px 1px black"
       }}
       >
             Metacritic Score:
@@ -135,7 +136,8 @@ export default function Homepage() {
       sx={{
         fontFamily: "Rubik",
         fontWeight: 700,
-        p: 3
+        p: 3,
+        width: "100%"
       }}
       >
       Darkest Dungeon
@@ -148,13 +150,14 @@ export default function Homepage() {
           </Typography>
           <Typography
       variant="h3"
-      color="#0c0f0eff"
+      color="white"
       align="center"
       sx={{
         fontFamily: "Oswald",
         fontWeight: 700,
         fontSize: 24,
-        p: 3
+        p: 3,
+        textShadow: "1px 1px 1px black"
       }}
       >
             Metacritic Score:
@@ -204,13 +207,14 @@ export default function Homepage() {
           </Typography>
           <Typography
       variant="h3"
-      color="#0c0f0eff"
+      color="white"
       align="center"
       sx={{
         fontFamily: "Oswald",
         fontWeight: 700,
         fontSize: 24,
-        p: 7
+        p: 7,
+        textShadow: "1px 1px 1px black"
       }}
       >
             Metacritic Score:
@@ -257,13 +261,14 @@ export default function Homepage() {
           </Typography>
           <Typography
       variant="h3"
-      color="#0c0f0eff"
+      color="white"
       align="center"
       sx={{
         fontFamily: "Oswald",
         fontWeight: 700,
         fontSize: 24,
-        p: 3
+        p: 3,
+        textShadow: "1px 1px 1px black"
       }}
       >
             Metacritic Score:

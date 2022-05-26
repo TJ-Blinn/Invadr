@@ -88,7 +88,10 @@ export default function Navigation() {
 
   return (
     <AppBar position="sticky" color="default">
-      <Container sx={{ display: "flex", alignItems: "center" }}>
+
+      <Container sx={{ display: "flex", alignItems: "center", position: "fixed", top:"0%",left: "-3%", right: "-3%", backgroundColor: "#f5f5f5" }}>
+
+
         <div className="brandCorner">
           <img src={Ivadr} alt="Ivadr logo" width="100" height="100" />
           <ThemeProvider theme={theme}>
@@ -149,7 +152,7 @@ export default function Navigation() {
           variant="button"
           underline="none"
           href={"/login"}
-          style={{ position: "absolute", right: 0, marginRight: "34px" }}
+          style={{ position: "absolute", right: "0%", marginRight: "34px" }}
         >
           <FaceOutlinedIcon sx={{ fontSize: 35 }} />
         </Link>

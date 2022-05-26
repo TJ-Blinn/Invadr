@@ -72,8 +72,9 @@ export default function FilterBanner(props) {
               color="secondary"
               align="center"
               sx={{
-                // lineHeight: 1.5,
+                marginTop: "5%",
                 p: 3,
+                textShadow: "2px 2px 2px white"
               }}
             >
               INVADR
@@ -84,6 +85,7 @@ export default function FilterBanner(props) {
               align="center"
               sx={{
                 p: 1,
+                fontSize: "xx-large"
               }}
             >
               Pick A Genre:

@@ -103,7 +103,7 @@ export default function Result(props) {
           <p className="game-description">{result.description_raw}</p> */}
 
 
-          <button onClick={onClick} style={{ width: "8%",textAlign: "center", backgroundColor: "transparent", border:"none", paddingTop: "2%"}}>
+          <button onClick={onClick} style={{ width: "8%",textAlign: "center", backgroundColor: "#76ff05", borderRadius:"1.66em", border:"none", paddingTop: "2%"}}>
                   <div>
                   {liked ? (
                     <img style={{ height: "2em", width: "auto" }} src={FullHeart} />
@@ -113,7 +113,18 @@ export default function Result(props) {
                 </div>
                   </button>
 
-          <h3>Metacritic score: {result.metacritic}</h3>
+                  <Typography
+      variant="h3"
+      color="white"
+      align="center"
+      sx={{
+        fontFamily: "Oswald",
+        fontWeight: 700,
+        fontSize: 24,
+        p: 3,
+        textShadow: "1px 1px 1px black"
+      }}
+      >Metacritic score: {result.metacritic}</Typography>
         </article>
         </ImageListItem>
         </Stack>
