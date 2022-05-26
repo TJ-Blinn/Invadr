@@ -20,11 +20,11 @@ import HomeIcon from "@mui/icons-material/Home";
 import LoginIcon from "@mui/icons-material/Login";
 import InfoIcon from "@mui/icons-material/Info";
 import FaceOutlinedIcon from "@mui/icons-material/FaceOutlined";
-import {Typography} from '@mui/material';
-import { lightGreen } from '@mui/material/colors';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Typography } from "@mui/material";
+import { lightGreen } from "@mui/material/colors";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 const navigationLinks = [
-  { name: "Homepage", href: "/" },
+  // { name: "Homepage", href: "/" },
   { name: "Profile", href: "/profile" },
   { name: "About", href: "/about" },
 ];
@@ -32,25 +32,24 @@ const navigationLinks = [
 export default function Navigation() {
   let navigate = useNavigate();
 
-  const color = lightGreen['A400'];
+  const color = lightGreen["A400"];
 
   const theme = createTheme({
     palette: {
       primary: {
-        main: '#ffebee',
-        contrastText: 'A400'
+        main: "#ffebee",
+        contrastText: "A400",
       },
-      secondary: lightGreen
+      secondary: lightGreen,
     },
     typography: {
-      fontFamily: 'Bungee',
-
+      fontFamily: "Bungee",
 
       body1: {
         fontFamily: "Helvetica",
-     }
-    }
-  })
+      },
+    },
+  });
   // Adds space between the links on the nav pullout
   const navStyles = {
     marginRight: 20,
@@ -90,16 +89,10 @@ export default function Navigation() {
   return (
     <AppBar position="sticky" color="default">
       <Container sx={{ display: "flex", alignItems: "center" }}>
-
         <div className="brandCorner">
-          <img
-            src={Ivadr}
-            alt="Ivadr logo"
-            width="100"
-            height="100"
-          />
+          <img src={Ivadr} alt="Ivadr logo" width="100" height="100" />
           <ThemeProvider theme={theme}>
-          <Typography
+            <Typography
               variant="h1"
               color="secondary"
               align="center"
@@ -107,19 +100,22 @@ export default function Navigation() {
                 // lineHeight: 1.5,
                 p: 1,
                 fontSize: 40,
-                textShadow: "3px 3px 3px #272d2dff"
+                textShadow: "3px 3px 3px #272d2dff",
               }}
             >
-              INVADR
+              <a href="/" alt="Homepage" className="invadr-link">
+                INVADR
+              </a>
             </Typography>
-            </ThemeProvider>
+          </ThemeProvider>
         </div>
 
         <Toolbar
           sx={{
-            margin:"1%",
-            marginLeft: "33%"
-          }} >
+            margin: "1%",
+            marginLeft: "33%",
+          }}
+        >
           <Hidden smDown>
             {navigationLinks.map((item) => (
               <Link
