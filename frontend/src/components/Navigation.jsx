@@ -20,6 +20,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import LoginIcon from "@mui/icons-material/Login";
 import InfoIcon from "@mui/icons-material/Info";
 import FaceOutlinedIcon from "@mui/icons-material/FaceOutlined";
+import VideogameAssetIcon from "@mui/icons-material/VideogameAsset";
 import { Typography } from "@mui/material";
 import { lightGreen } from "@mui/material/colors";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -88,10 +89,18 @@ export default function Navigation() {
 
   return (
     <AppBar position="sticky" color="default">
-
-      <Container sx={{ display: "flex", alignItems: "center", justifyContent:"flex-end" , position: "fixed", top:"0%",left: "-3%", right: "-3%", backgroundColor: "#f5f5f5" }}>
-
-
+      <Container
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
+          position: "fixed",
+          top: "0%",
+          left: "-3%",
+          right: "-3%",
+          backgroundColor: "#f5f5f5",
+        }}
+      >
         <div className="brandCorner">
           <img src={Ivadr} alt="Ivadr logo" width="100" height="100" />
           <ThemeProvider theme={theme}>
@@ -154,7 +163,7 @@ export default function Navigation() {
           href={"/login"}
           style={{ position: "absolute", right: "0%", marginRight: "34px" }}
         >
-          <FaceOutlinedIcon sx={{ fontSize: 35 }} />
+          <VideogameAssetIcon sx={{ fontSize: 45 }} />
         </Link>
       </Container>
     </AppBar>
