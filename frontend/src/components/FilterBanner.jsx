@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navigation from "./Navigation";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
@@ -25,7 +24,6 @@ export default function FilterBanner(props) {
     "https://api.rawg.io/api/genres?key=4d6e63aaf07b45ada62f971b8736e525";
 
   // Calls the api to get genres
-  // TODO **** for pagination query the api for value limits
 
   useEffect(() => {
     axios.get(startingURL).then((response) => {
@@ -64,7 +62,6 @@ export default function FilterBanner(props) {
   return (
     <div>
       <ThemeProvider theme={theme}>
-
         {genres ? (
           <div class="banner">
             <Typography
@@ -74,7 +71,7 @@ export default function FilterBanner(props) {
               sx={{
                 marginTop: "5%",
                 p: 3,
-                textShadow: "2px 2px 2px white"
+                textShadow: "2px 2px 2px white",
               }}
             >
               INVADR
@@ -85,7 +82,7 @@ export default function FilterBanner(props) {
               align="center"
               sx={{
                 p: 1,
-                fontSize: "xx-large"
+                fontSize: "xx-large",
               }}
             >
               Pick A Genre:
@@ -108,9 +105,7 @@ export default function FilterBanner(props) {
         ) : (
           <h1>Loading</h1>
         )}
-
       </ThemeProvider>
     </div>
   );
 }
-/* genresMapped = list of options */

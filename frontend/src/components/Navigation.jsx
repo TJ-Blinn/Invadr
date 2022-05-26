@@ -1,39 +1,41 @@
 import React from "react";
 import Ivadr from "../files/ivadr.png";
-import { Link } from "@mui/material";
-import { AppBar } from "@mui/material";
+
+import {
+  AppBar,
+  Link,
+  Container,
+  Hidden,
+  IconButton,
+  Typography,
+} from "@mui/material";
 import Toolbar from "@mui/material/Toolbar";
-import { Container } from "@mui/material";
-import { Hidden } from "@mui/material";
-import { IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
+
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
+
 import HomeIcon from "@mui/icons-material/Home";
 import LoginIcon from "@mui/icons-material/Login";
 import InfoIcon from "@mui/icons-material/Info";
-import FaceOutlinedIcon from "@mui/icons-material/FaceOutlined";
 import VideogameAssetIcon from "@mui/icons-material/VideogameAsset";
-import { Typography } from "@mui/material";
+
 import { lightGreen } from "@mui/material/colors";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 const navigationLinks = [
-  // { name: "Homepage", href: "/" },
   { name: "Profile", href: "/profile" },
   { name: "About", href: "/about" },
 ];
 
 export default function Navigation() {
   let navigate = useNavigate();
-
-  const color = lightGreen["A400"];
 
   const theme = createTheme({
     palette: {
@@ -55,10 +57,6 @@ export default function Navigation() {
   const navStyles = {
     marginRight: 10,
   };
-
-  // AppBar and Toolbar MUI components to contain active elements, also adds padding and spacing
-  // Container is used here to put constraints on the toolbar when window is large
-  // Hidden MUI component is hidding 1) the menu bar when screen is small, 2) the menubar icon when screen is small
 
   const [drawer, setDrawer] = React.useState(false);
 
@@ -109,7 +107,6 @@ export default function Navigation() {
               color="secondary"
               align="center"
               sx={{
-                // lineHeight: 1.5,
                 p: 1,
                 fontSize: 40,
                 textShadow: "3px 3px 3px #272d2dff",

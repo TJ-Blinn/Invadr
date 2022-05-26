@@ -1,8 +1,6 @@
 import React from "react";
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { Box, TextField, Stack, Button, Container } from "@mui/material";
 import axios from "axios";
 
@@ -14,12 +12,6 @@ const styles = {
 
 export default function Login() {
   let navigate = useNavigate();
-
-  // add to CSS
-  // height: 100vh;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -40,35 +32,17 @@ export default function Login() {
       .catch((err) => {
         console.log(err);
       });
-
-    // try {
-    //   const response = await axios.post(
-    //     LOGIN_URL,
-    //     JSON.stringify({ email, password })
-    //   );
-    // } catch (err) {
-    //   if (!err?.response) {
-    //     setErrMsg("No Server Response");
-    //   } else if (err.response.status === 400) {
-    //     setErrMsg("Missing Email or Password");
-    //   } else {
-    //     setErrMsg("Login Failed");
-    //   }
-    // }
   };
 
   return (
     <Container
       className="login-container"
-
       maxWidth="false"
       sx={{ height: "100vh", width: "100vw" }}
-
     >
       <nav class="login-nav">
         <h1 class="title-page-gradient">INVADR</h1>
       </nav>
-      {/* -------- no NAV display on Login page -------- */}
 
       <div className="body-title">
         <p>Login</p>
@@ -84,7 +58,6 @@ export default function Login() {
         onSubmit={handleSubmit}
       >
         <Stack spacing={2}>
-
           <TextField
             required
             type="email"
@@ -97,7 +70,6 @@ export default function Login() {
             label="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
-
         </Stack>
         <br />
         <Stack spacing={1} direction="column" alignItems="center">

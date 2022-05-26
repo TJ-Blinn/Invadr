@@ -26,26 +26,3 @@ module.exports = (db) => {
 
   return router;
 };
-
-//authentication.js //
-
-//res.json
-/*
-click on sign up icon
-type in f_name
-type l_name
-type email
-create password
-click register button
-{ f_name: “string”,
-  l_name: “string”,
-  email: “string”,
-  pswrd: “”
-};post request app.post(“/register”)
-receive user input(object) from the client
-validate inputs (checks to see if user data already
-   exist etc)
-   stores user input in db
-   send confirmation user has been created
-   (React handles rendering)  });
-   */

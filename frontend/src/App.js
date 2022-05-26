@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import "./App.css";
 import Register from "./components/Register";
 import Homepage from "./components/Homepage";

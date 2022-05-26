@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { ImageListItem, ImageListItemBar } from "@mui/material";
-import { shadows, borders } from "@mui/system";
 import "../App.css";
 import FullHeart from "../files/fullheart.png";
 import EmptyHeart from "../files/emptyheart.png";
-import { ForkLeft } from "@mui/icons-material";
 
-// This is the child component for Likes
-// on LikesMapped.jsx, we can accessing the like game id through props.gameId, then we make an api call to RAWG to
-//  receive all of that specific game's info
-// then we populate our front end with values returned from RAWG
+/* This is the child component for Likes
+    on LikesMapped.jsx, we can accessing the like game id through props.gameId, then we make an api call to RAWG to
+    receive all of that specific game's info
+    then we populate our front end with values returned from RAWG */
 
 export default function LikesMapped(props) {
   const [result, setResult] = useState([]);
@@ -41,29 +39,6 @@ export default function LikesMapped(props) {
       });
   };
   return (
-    // <Container maxWidth="md">
-    // <div
-    //   style={{
-    //     display: "grid",
-    //     gridTemplateColumns: "repeat(3, 1fr)",
-    //     gap: "10px",
-    //   }}
-    // >
-    //   {/* Div here creates column, do the loop for the content in */}
-    //   <div
-    //     style={{
-    //       boxShadow: "0px 3px 1px rgb(0 0 0 / 20%)",
-    //       borderRadius: "8px",
-    //       padding: "16px",
-    //     }}
-    //   >
-    //     <img
-    //       src={result.background_image}
-    //       style={{ width: "100%", height: "auto" }}
-    //     />
-    //   </div>
-    // </div>
-
     <div>
       {result ? (
         <ImageListItem
@@ -72,12 +47,12 @@ export default function LikesMapped(props) {
             height: 500,
             boxShadow: 4,
             borderRadius: 8,
-            border:"solid lightGreen",
+            border: "solid lightGreen",
             p: 2,
             m: 2,
-            marginLeft:"20%",
-            display:"flex",
-            alignItems:"center",
+            marginLeft: "20%",
+            display: "flex",
+            alignItems: "center",
           }}
         >
           <img
@@ -87,16 +62,29 @@ export default function LikesMapped(props) {
             alt={result.name}
             loading="lazy"
           />
-          <button onClick={handleLike} style={{ width: "8%",textAlign: "center", backgroundColor: "transparent", border:"none", paddingTop: "2%"}}>
+          <button
+            onClick={handleLike}
+            style={{
+              width: "8%",
+              textAlign: "center",
+              backgroundColor: "transparent",
+              border: "none",
+              paddingTop: "2%",
+            }}
+          >
             <div>
               {liked ? (
-                <img style={{ height: "2em", width: "auto" }} src={FullHeart} />
+                <img
+                  style={{ height: "2em", width: "auto" }}
+                  src={FullHeart}
+                  alt="Full heart icon"
+                />
               ) : (
-                <img src={EmptyHeart} />
+                <img src={EmptyHeart} alt="Empty Heart icon" />
               )}
             </div>
           </button>
-          <h2 className="resultTitle" >{result.name}</h2>
+          <h2 className="resultTitle">{result.name}</h2>
           <ImageListItemBar
             subtitle={result.description_raw}
             position="below"
@@ -109,42 +97,3 @@ export default function LikesMapped(props) {
     </div>
   );
 }
-
-/*
-//   return (
-//     <Container maxWidth="md">
-//       <ImageList
-//         sx={{ boxShadow: 2, borderRadius: 2, p: 2 }}
-//         cols={3}
-//         gap={10}
-//       >
-//         {mapping()}
-//       </ImageList>
-//     </Container>
-//   );
-
-// return <>{displayLikes()}</>;
-
-// export default function LikesMapped(props) {
-//   const displayLikes = () => {
-//     const likes = props.userLikes;
-
-//     return likes.map((like, index) => {
-//       console.log(like);
-//       return (
-//         <div key={like.id}>
-//           <h3>{like.name}</h3>
-//           <div>{like.description}</div>
-//           <img
-//             src={like.thumbnail_url}
-//             alt="User's favorite games"
-//             width="200"
-//             height="200"
-//           ></img>
-//         </div>
-//       );
-//     });
-//   };
-//   return <>{displayLikes()}</>;
-// }
-*/
