@@ -2,7 +2,7 @@
 
 ## Overview
 
-Invadr is a catalogue of over 500,000 games, which can be sorted by Genre, and liked by a User. Users can then view their profiles to see a list of games they've liked.
+Invadr is a catalogue of over 500,000 games, which can be sorted by Genre, and liked by a User. It sources its data using the RAWG API. Users can then view their profiles to see a list of games they've liked.
 
 <br>
 
@@ -94,7 +94,7 @@ password: asdf
 
 <br>
 
-[![01.png](https://i.postimg.cc/13vzjzf4/01.png)](https://postimg.cc/21Bmqrdf)
+![Homepage](https://github.com/TJ-Blinn/Invadr/blob/master/frontend/src/files/homepage1.png?raw=true)
 
 <br>
 
@@ -102,25 +102,25 @@ You can use the drop down under "Pick a Genre" to select a genre of game, which 
 
 <br>
 
-[![image.png](https://i.postimg.cc/HLjPQ6qj/image.png)](https://postimg.cc/CZTN0sLV)
-[![image.png](https://i.postimg.cc/50dq6p1h/image.png)](https://postimg.cc/QBmWzQFm)
-[![image.png](https://i.postimg.cc/htfKjRS5/image.png)](https://postimg.cc/0zRTW3KY)
+![Search Menu](https://github.com/TJ-Blinn/Invadr/blob/master/frontend/src/files/homepage2.png?raw=true)
 
 <br>
 
 Once liked, the user can click the Profile option in the top navigation bar, to be redirected to their profile
 
-<br>
-
-[![image.png](https://i.postimg.cc/TPPzYVfq/image.png)](https://postimg.cc/0zLWVJ6b)
+![Profile_heart](https://github.com/TJ-Blinn/Invadr/blob/master/frontend/src/files/homepage3.png?raw=true)
 
 <br>
 
 If the user no longer likes the game, they can unclick the like button to remove it from their profile
 
+![Profile_empty](https://github.com/TJ-Blinn/Invadr/blob/master/frontend/src/files/homepage4.png?raw=true)
+
 <br>
 
-[![image.png](https://i.postimg.cc/nzSBftTG/image.png)](https://postimg.cc/ph8pK4wm)
+The login screen has a flashing gradient animation
+
+![Login_animation](https://github.com/TJ-Blinn/Invadr/blob/master/frontend/src/files/login.gif?raw=true)
 
 <br>
 
@@ -134,3 +134,7 @@ If the user no longer likes the game, they can unclick the like button to remove
 - Transparent cards (Glassmorphism) on Homepage adapted from source code: css.glass by _@miketromba_
   May 19, 2022:
   [css.glass](https://css.glass "@miketromba")
+
+- Login background image used from Vecteezy (Retro Futurism Background) [Nasik Lababan](https://www.vecteezy.com/vector-art/2072755-retro-futurism-background)
+
+- Website background image used form Vecteezy (Black triangular abstract texture low light background) [khwanchai.phanthong](https://www.vecteezy.com/vector-art/518751-black-triangular-abstract-texture-low-light-background)
